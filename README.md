@@ -4,7 +4,7 @@
 Group Project: Mark McDonald, Alan Martinson, Carly Gloge, Hemanyt Bajpai, Pritam Dey, Taylor Meyer
 
 
-[Link to Final Technical Paper](EU Green Deal - Paper Final.pdf)
+[Link to Final Technical Paper]("EU Green Deal - Paper Final.pdf")
 
 ![final presentation p1](EU_Green_Deal_Final_Presentation_1.jpeg)
 ![final presentation p2](EU_Green_Deal_Final_Presentation_2.jpeg)
