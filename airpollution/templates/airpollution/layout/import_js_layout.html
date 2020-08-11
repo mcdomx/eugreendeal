@@ -1,0 +1,77 @@
+{% extends "airpollution/layout/base_layout.html" %}
+{% load static %}
+
+{% block corejsbody %}
+    <!--   Core JS Files   -->
+    <script type="text/javascript" src="{% static 'airpollution/assets/js/core/jquery.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'airpollution/assets/js/core/popper.min.js' %}"></script>
+    <script type="text/javascript"
+            src="{% static 'airpollution/assets/js/core/bootstrap-material-design.min.js' %}"></script>
+    <script type="text/javascript"
+            src="{% static 'airpollution/assets/js/plugins/perfect-scrollbar.jquery.min.js' %}"></script>
+    <!-- Plugin for the momentJs  -->
+    <script type="text/javascript" src="{% static 'airpollution/assets/js/plugins/moment.min.js' %}"></script>
+    <!--  Plugin for Sweet Alert -->
+    <script type="text/javascript" src="{% static 'airpollution/assets/js/plugins/sweetalert2.js' %}"></script>
+    <!-- Forms Validations Plugin -->
+    <script type="text/javascript" src="{% static 'airpollution/assets/js/plugins/jquery.validate.min.js' %}"></script>
+    <!-- Plugin for the Wizard, full documentation here: https://github.com/VinceG/twitter-bootstrap-wizard -->
+    <script type="text/javascript"
+            src="{% static 'airpollution/assets/js/plugins/jquery.bootstrap-wizard.js' %}"></script>
+    <!--  Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
+    <script type="text/javascript"
+            src="{% static 'airpollution/assets/js/plugins/bootstrap-selectpicker.js' %}"></script>
+    <!--  Plugin for the DateTimePicker, full documentation here: https://eonasdan.github.io/bootstrap-datetimepicker/ -->
+    <script type="text/javascript"
+            src="{% static 'airpollution/assets/js/plugins/bootstrap-datetimepicker.min.js' %}"></script>
+    <!--  DataTables.net Plugin, full documentation here: https://datatables.net/  -->
+    <script type="text/javascript"
+            src="{% static 'airpollution/assets/js/plugins/jquery.dataTables.min.js' %}"></script>
+    <!--  Plugin for Tags, full documentation here: https://github.com/bootstrap-tagsinput/bootstrap-tagsinputs  -->
+    <script type="text/javascript" src="{% static 'airpollution/assets/js/plugins/bootstrap-tagsinput.js' %}"></script>
+    <!-- Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
+    <script type="text/javascript" src="{% static 'airpollution/assets/js/plugins/jasny-bootstrap.min.js' %}"></script>
+    <!--  Full Calendar Plugin, full documentation here: https://github.com/fullcalendar/fullcalendar    -->
+    <script type="text/javascript" src="{% static 'airpollution/assets/js/plugins/fullcalendar.min.js' %}"></script>
+    <!-- Vector Map plugin, full documentation here: http://jvectormap.com/documentation/ -->
+    <script type="text/javascript" src="{% static 'airpollution/assets/js/plugins/jquery-jvectormap.js' %}"></script>
+    <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+    <script type="text/javascript" src="{% static 'airpollution/assets/js/plugins/nouislider.min.js' %}"></script>
+    <!-- Library for adding dinamically elements -->
+    <script type="text/javascript" src="{% static 'airpollution/assets/js/plugins/arrive.min.js' %}"></script>
+
+    <script type="text/javascript" src="{% static 'airpollution/assets/js/plugins/chartist.min.js' %}"></script>
+    <!--  Notifications Plugin    -->
+    <script type="text/javascript" src="{% static 'airpollution/assets/js/plugins/bootstrap-notify.js' %}"></script>
+    <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+    <script type="text/javascript"
+            src="{% static 'airpollution/assets/js/material-dashboard.js' %}"></script>
+    <!-- Material Dashboard DEMO methods, don't include it in your project! -->
+    <script type="text/javascript" src="{% static 'airpollution/assets/demo/demo.js' %}"></script>
+
+    <!-- Include a polyfill for ES6 Promises (optional) for IE11, UC Browser and Android browser support SweetAlert -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
+    <!--  Google Maps Plugin    -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script><!-- Chartist JS -->
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+    <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-2.0.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.0.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-tables-2.0.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-gl-2.0.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-api-2.0.0.min.js"></script>
+
+    <!-- Include ChartJS-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.min.js"></script>
+
+{#    <script src="https://www.amcharts.com/lib/4/core.js"></script>#}
+{#    <script src="https://www.amcharts.com/lib/4/maps.js"></script>#}
+{#    <script src="https://www.amcharts.com/lib/4/geodata/worldHigh.js"></script>#}
+{#    <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>#}
+
+    <script type="text/javascript" src="{% static 'airpollution/assets/js/plugins/notify.js' %}"></script>
+    <script type="text/javascript" src="{% static 'airpollution/multiselect/js/bootstrap-multiselect.js' %}"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+{% endblock %}

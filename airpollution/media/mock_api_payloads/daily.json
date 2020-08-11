@@ -1,0 +1,268 @@
+
+{
+    "de" : {
+        "2020-03-19" : {
+            "o3" : {
+                "day-avg-level": 66.2,
+                "ytd-avg-level": 66.4
+                },
+            "co" : {
+                "day-avg-level": 5000.3,
+                "ytd-avg-level": 34.6
+                }
+        },
+        "2020-03-20" : {
+            "o3" : {
+                "day-avg-level": 69.2,
+                "ytd-avg-level": 77.4
+                },
+            "co" : {
+                "day-avg-level": 5001.3,
+                "ytd-avg-level": 45.6
+                }
+        }
+    },
+    "nl" : {
+        "2020-03-19" : {
+            "o3" : {
+                "day-avg-level": 99.2,
+                "ytd-avg-level": 45.4
+                },
+            "co" : {
+                "day-avg-level": 6001.2,
+                "ytd-avg-level": 6400.6
+                }
+        },
+        "2020-03-20" : {
+            "o3" : {
+                "day-avg-level": 66.2,
+                "ytd-avg-level": 45.4
+                },
+            "co" : {
+                "day-avg-level": 2893.3,
+                "ytd-avg-level": 3434.6
+                }
+        }
+    },
+    "it" : {
+        "2020-03-19" : {
+            "o3" : {
+                "day-avg-level": 38.2,
+                "ytd-avg-level": 56.4
+                },
+            "co" : {
+                "day-avg-level": 4001.2,
+                "ytd-avg-level": 56.6
+                }
+        },
+        "2020-03-20" : {
+            "o3" : {
+                "day-avg-level": 34.2,
+                "ytd-avg-level": 34.4
+                },
+            "co" : {
+                "day-avg-level": 6400.3,
+                "ytd-avg-level": 6500.6
+                }
+        }
+    },
+    "fr" : {
+        "2020-03-19" : {
+            "o3" : {
+                "day-avg-level": 60.2,
+                "ytd-avg-level": 67.4
+                },
+            "co" : {
+                "day-avg-level": 4001.2,
+                "ytd-avg-level": 67.6
+                }
+        },
+        "2020-03-20" : {
+            "o3" : {
+                "day-avg-level": 34.2,
+                "ytd-avg-level": 34.4
+                },
+            "co" : {
+                "day-avg-level": 6400.3,
+                "ytd-avg-level": 6500.6
+                }
+        }
+    },
+    "dk" : {
+        "2020-03-19" : {
+            "o3" : {
+                "day-avg-level": 60.2,
+                "ytd-avg-level": 67.4
+                },
+            "co" : {
+                "day-avg-level": 4001.2,
+                "ytd-avg-level": 67.6
+                }
+        },
+        "2020-03-20" : {
+            "o3" : {
+                "day-avg-level": 34.2,
+                "ytd-avg-level": 34.4
+                },
+            "co" : {
+                "day-avg-level": 6400.3,
+                "ytd-avg-level": 6500.6
+                }
+        }
+    },
+    "at" : {
+        "2020-03-19" : {
+            "o3" : {
+                "day-avg-level": 60.2,
+                "ytd-avg-level": 67.4
+                },
+            "co" : {
+                "day-avg-level": 4001.2,
+                "ytd-avg-level": 67.6
+                }
+        },
+        "2020-03-20" : {
+            "o3" : {
+                "day-avg-level": 34.2,
+                "ytd-avg-level": 34.4
+                },
+            "co" : {
+                "day-avg-level": 6400.3,
+                "ytd-avg-level": 6500.6
+                }
+        }
+    },
+    "gr" : {
+        "2020-03-19" : {
+            "o3" : {
+                "day-avg-level": 60.2,
+                "ytd-avg-level": 67.4
+                },
+            "co" : {
+                "day-avg-level": 4001.2,
+                "ytd-avg-level": 67.6
+                }
+        },
+        "2020-03-20" : {
+            "o3" : {
+                "day-avg-level": 34.2,
+                "ytd-avg-level": 34.4
+                },
+            "co" : {
+                "day-avg-level": 8994.3,
+                "ytd-avg-level": 34.6
+                }
+        }
+    },
+    "lu" : {
+        "2020-03-19" : {
+            "o3" : {
+                "day-avg-level": 34.2,
+                "ytd-avg-level": 67.4
+                },
+            "co" : {
+                "day-avg-level": 3443.2,
+                "ytd-avg-level": 34.6
+                }
+        },
+        "2020-03-20" : {
+            "o3" : {
+                "day-avg-level": 34.2,
+                "ytd-avg-level": 23.4
+                },
+            "co" : {
+                "day-avg-level": 2323.3,
+                "ytd-avg-level": 4949.6
+                }
+        }
+    },
+    "es" : {
+        "2020-03-19" : {
+            "o3" : {
+                "day-avg-level": 60.2,
+                "ytd-avg-level": 67.4
+                },
+            "co" : {
+                "day-avg-level": 4001.2,
+                "ytd-avg-level": 67.6
+                }
+        },
+        "2020-03-20" : {
+            "o3" : {
+                "day-avg-level": 34.2,
+                "ytd-avg-level": 34.4
+                },
+            "co" : {
+                "day-avg-level": 2323.3,
+                "ytd-avg-level": 6500.6
+                }
+        }
+    },
+    "pt" : {
+        "2020-03-19" : {
+            "o3" : {
+                "day-avg-level": 60.2,
+                "ytd-avg-level": 67.4
+                },
+            "co" : {
+                "day-avg-level": 4001.2,
+                "ytd-avg-level": 67.6
+                }
+        },
+        "2020-03-20" : {
+            "o3" : {
+                "day-avg-level": 20.2,
+                "ytd-avg-level": 34.4
+                },
+            "co" : {
+                "day-avg-level": 54879.3,
+                "ytd-avg-level": 6500.6
+                }
+        }
+    },
+    "be" : {
+        "2020-03-19" : {
+            "o3" : {
+                "day-avg-level": 23.2,
+                "ytd-avg-level": 67.4
+                },
+            "co" : {
+                "day-avg-level": 4001.2,
+                "ytd-avg-level": 67.6
+                }
+        },
+        "2020-03-20" : {
+            "o3" : {
+                "day-avg-level": 23.2,
+                "ytd-avg-level": 34.4
+                },
+            "co" : {
+                "day-avg-level": 2323.3,
+                "ytd-avg-level": 6500.6
+                }
+        }
+    },
+    "ch" : {
+        "2020-03-19" : {
+            "o3" : {
+                "day-avg-level": 54.2,
+                "ytd-avg-level": 66.4
+                },
+            "co" : {
+                "day-avg-level": 4001.2,
+                "ytd-avg-level": 88.6
+                }
+        },
+        "2020-03-20" : {
+            "o3" : {
+                "day-avg-level": 23.2,
+                "ytd-avg-level": 34.4
+                },
+            "co" : {
+                "day-avg-level": 2323.3,
+                "ytd-avg-level": 6500.6
+                }
+        }
+    }
+ }
+ 

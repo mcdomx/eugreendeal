@@ -1,0 +1,29 @@
+version: '3.1'
+
+volumes:
+  database_data:
+    driver: local
+
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: eugd_db
+      POSTGRES_USER: eudbuser
+      POSTGRES_PASSWORD: password
+    ports:
+      - 5432:5432
+    volumes:
+      - database_data:/var/lib/postgresql/data
+
+  eugdweb:
+    image: eugdserver
+    restart: always
+    environment:
+      DB_USER: eudbuser
+      DB_PASSWORD: password
+      DB_HOST: db
+      WORKSPACE: DEV
+    ports:
+      - 8000:8000

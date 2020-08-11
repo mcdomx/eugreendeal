@@ -1,0 +1,70 @@
+airpollution.models package
+===========================
+
+Submodules
+----------
+
+airpollution.models.models module
+---------------------------------
+
+.. automodule:: airpollution.models.models
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+airpollution.models.models\_copernicus module
+---------------------------------------------
+
+.. automodule:: airpollution.models.models_copernicus
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+airpollution.models.models\_eea module
+--------------------------------------
+
+.. automodule:: airpollution.models.models_eea
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+airpollution.models.models\_eurostat\_population module
+-------------------------------------------------------
+
+.. automodule:: airpollution.models.models_eurostat_population
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+airpollution.models.models\_nuts module
+---------------------------------------
+
+.. automodule:: airpollution.models.models_nuts
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+airpollution.models.models\_observations module
+-----------------------------------------------
+
+.. automodule:: airpollution.models.models_observations
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+airpollution.models.models\_pollutants module
+---------------------------------------------
+
+.. automodule:: airpollution.models.models_pollutants
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: airpollution.models
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,22 @@
+dataingestor.copernicus package
+===============================
+
+Submodules
+----------
+
+dataingestor.copernicus.CopernicusDataSource module
+---------------------------------------------------
+
+.. automodule:: dataingestor.copernicus.CopernicusDataSource
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: dataingestor.copernicus
+   :members:
+   :undoc-members:
+   :show-inheritance:

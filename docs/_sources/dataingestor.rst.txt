@@ -1,0 +1,47 @@
+dataingestor package
+====================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   dataingestor.EEA
+   dataingestor.copernicus
+
+Submodules
+----------
+
+dataingestor.DataSource module
+------------------------------
+
+.. automodule:: dataingestor.DataSource
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+dataingestor.PollutantDataSource module
+---------------------------------------
+
+.. automodule:: dataingestor.PollutantDataSource
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+dataingestor.create\_dummy\_data module
+---------------------------------------
+
+.. automodule:: dataingestor.create_dummy_data
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: dataingestor
+   :members:
+   :undoc-members:
+   :show-inheritance:

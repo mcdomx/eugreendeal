@@ -1,0 +1,46 @@
+eugreendeal package
+===================
+
+Submodules
+----------
+
+eugreendeal.asgi module
+-----------------------
+
+.. automodule:: eugreendeal.asgi
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+eugreendeal.settings module
+---------------------------
+
+.. automodule:: eugreendeal.settings
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+eugreendeal.urls module
+-----------------------
+
+.. automodule:: eugreendeal.urls
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+eugreendeal.wsgi module
+-----------------------
+
+.. automodule:: eugreendeal.wsgi
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: eugreendeal
+   :members:
+   :undoc-members:
+   :show-inheritance:

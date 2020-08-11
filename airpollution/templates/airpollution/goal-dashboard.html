@@ -1,0 +1,270 @@
+{% extends "airpollution/layout/corejs_script_layout.html" %}
+{% load static %}
+{% block jscript %}
+    {% csrf_token %}
+    <script type="text/javascript">
+        var startDate = null;
+        var endDate = null;
+        var plotDate = null;
+        document.addEventListener('DOMContentLoaded', () => {
+            {#var prevMonthFirstDay = moment().subtract(1, 'months').date(1);#}
+            {#var prevMonthLastDay = moment().date(1).subtract(1, 'days');#}
+            var prevMonthFirstDay = moment().subtract(1, 'weeks').startOf('week');
+            var prevMonthLastDay = moment().subtract(1, 'weeks').endOf('week');
+            var yesterday = moment().subtract(1, 'days');
+
+            startDate = prevMonthFirstDay.format('YYYY-MM-DD');
+            endDate = prevMonthLastDay.format('YYYY-MM-DD');
+            plotDate = yesterday.format('YYYY-MM-DD');
+
+            $(function () {
+                $('input[name="daterange"]').daterangepicker({
+                    opens: 'left',
+                    startDate: prevMonthFirstDay,
+                    endDate: prevMonthLastDay,
+                    locale: {
+                        format: 'YYYY-MM-DD'
+                    }
+                }, function (start, end, label) {
+                    console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+                    startDate = start.format('YYYY-MM-DD');
+                    endDate = end.format('YYYY-MM-DD')
+                });
+            });
+
+            var filters = {
+                'startDate': startDate,
+                'endDate': endDate,
+                'plotDate': plotDate,
+            };
+
+            updateDiv('table-1', '/pollution_attainment_table', null);
+            updateDiv('goals-bubble-map', '/map_target_bubbles', filters);
+            updateDiv('goals-heatmap', '/map_target_heatmap', filters);
+
+        });
+
+        function updateDiv(divId, uri, filters) {
+            let divIdWithHash = '#' + divId;
+            var chart_div = document.querySelector(divIdWithHash);
+            var finalUri = null
+            if (filters == null) {
+                finalUri = uri;
+            } else {
+                finalUri = addFiltersToUri(uri, filters);
+            }
+
+            console.log(finalUri);
+            chart_div.innerHTML = "<img style=\"height:300px;width:400px\" src={% static 'airpollution/assets/img/gif/pre-loader-2.gif' %}>";
+            fetch(finalUri)
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (item) {
+                    var chart_div = document.querySelector(divIdWithHash);
+                    chart_div.innerHTML = "";
+                    Bokeh.embed.embed_item(item, divId);
+                    chart_div.setAttribute('data-url', finalUri);
+                }).catch((error) => {
+                var chart_div = document.querySelector(divIdWithHash);
+                chart_div.innerHTML = "<img style=\"height:200px;width:auto\" src={% static 'airpollution/assets/img/tech-snag.png' %}>";
+                chart_div.setAttribute('data-url', finalUri);
+            });
+        }
+
+        function addFiltersToUri(uri, filters) {
+            var startDate = filters['startDate'];
+            var endDate = filters['endDate'];
+            var plotDate = filters['plotDate']
+            var finalUri = uri;
+            var filterSuffixUri = '';
+
+            if (startDate) {
+                if (filterSuffixUri) {
+                    filterSuffixUri += '&';
+                }
+                filterSuffixUri = filterSuffixUri + 'start_date=' + startDate;
+            }
+            if (endDate) {
+                if (filterSuffixUri) {
+                    filterSuffixUri += '&';
+                }
+                filterSuffixUri = filterSuffixUri + 'end_date=' + endDate;
+            }
+            if (plotDate) {
+                if (filterSuffixUri) {
+                    filterSuffixUri += '&';
+                }
+                filterSuffixUri = filterSuffixUri + 'plot_date=' + plotDate;
+            }
+            if (filterSuffixUri != '') {
+                finalUri = finalUri + '?' + filterSuffixUri;
+            }
+            return finalUri;
+        }
+
+        function update() {
+
+            var filters = {
+                'startDate': startDate,
+                'endDate': endDate,
+            };
+
+            {#updateDiv('table-1', '/emissions_trend_table', null);#}
+            updateDiv('goals-bubble-map', '/map_target_bubbles', filters);
+            {#updateDiv('goals-heatmap', '/map_target_heatmap', filters);#}
+        }
+
+        function addChartToPersona(button) {
+            var csrftoken = jQuery("[name=csrfmiddlewaretoken]").val();
+            var chartid = button.dataset['chartid'];
+            var formid = button.dataset['formid'];
+            var form = document.querySelector('#' + formid);
+            var selectedOption = form.getElementsByTagName('select').persona;
+            let groupId = selectedOption.options[selectedOption.selectedIndex].value;
+            console.log(groupId);
+            console.log(chartid);
+            var element = document.querySelector('#' + chartid);
+            let url = element.dataset.url;
+            console.log(url);
+            const request = new XMLHttpRequest();
+            {#request.open('GET', '/add_chart_to_persona/' + groupId + '/' + chartid + '/regional');#}
+            request.open('POST', '/add_chart_to_persona/');
+            request.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+            request.setRequestHeader('Content-type', 'application/json');
+            request.setRequestHeader("X-CSRFToken", csrftoken);
+            var params = {};
+            params.chart_id = chartid;
+            params.group_id = groupId;
+            params.url = encodeURI(url);
+            params.label = element.dataset.label;
+            request.onload = () => {
+                console.log(request.responseText);
+                Notify("Chart Added to persona", null, null, 'success');
+            };
+            request.send(JSON.stringify(params));
+        }
+    </script>
+{% endblock %}
+{% block goal-dashboard-navitem-active %}
+    active
+{% endblock %}
+{% block dashboardname %}Goals Dashboard{% endblock %}
+{% block contentbody %}
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div id="notifications"></div>
+            </div>
+            <div class="row card-header ">
+                <div class="col-md-4">
+                    <h3 class="card-title mt-0 font-weight-bold lead eu-nav-title">Attainment Goals Report</h3>
+                </div>
+                <div class="col-md-8">
+                    <div class="eu-treds-filter">
+                        <!--<div class="col-sm-12">-->
+                        <div class="eu-treds-filterspace">
+                            <h5 class="card-title mt-0">Filters</h5>
+                        </div>
+
+
+                        <div class="eu-treds-filterspace eu-space eu-inline">
+                            <h6>Date Range</h6>
+                            <input id="daterange" class="form-control" type="text" name="daterange"/>
+                        </div>
+                        <div class=" d-flex align-items-center eu-btn">
+                            <input id="submit-filter-button" class="btn btn-primary"
+                                   type="submit" value="Submit" onclick="update();"/>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header card-header-success">
+                            <div class="col-sm-6">
+                                <h4 class="card-title mt-0">Population Impacted and Target Achievement</h4>
+                            </div>
+                        </div>
+                        <div id="goals-bubble-map" data-label="Population Impacted and Target Achievement"></div>
+                    </div>
+                    {% if user.is_superuser %}
+                        <div id="goals-bubble-map-form">
+                            <select class=" form-group btn btn-primary dropdown-toggle"
+                                    data-toggle="dropdown" aria-expanded="false" name="persona">
+                                {% for group in groups %}
+                                    <option class="dropdown-item"
+                                            value="{{ group.id }}">{{ group.name }}</option>
+                                {% endfor %}
+                            </select>
+                            <input id="add-chart-to-persona-button" class="btn btn-primary"
+                                   data-chartid="goals-bubble-map" data-formid="goals-bubble-map-form"
+                                   type="submit" value="Add" onclick="addChartToPersona(this)"/>
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header card-header-success">
+                            <div class="col-sm-6">
+                                <h4 class="card-title mt-0">Satellite Measurement of Pollutants vs Targets</h4>
+                            </div>
+                        </div>
+                        <div id="goals-heatmap" data-label="Satellite Measurement of Pollutants vs Targets">
+                        </div>
+                    </div>
+                    {% if user.is_superuser %}
+                        <div id="goals-heatmap-form">
+                            <select class=" form-group btn btn-primary dropdown-toggle"
+                                    data-toggle="dropdown" aria-expanded="false" name="persona">
+                                {% for group in groups %}
+                                    <option class="dropdown-item"
+                                            value="{{ group.id }}">{{ group.name }}</option>
+                                {% endfor %}
+                            </select>
+                            <input id="add-chart-to-persona-button" class="btn btn-primary"
+                                   data-chartid="goals-heatmap" data-formid="goals-heatmap-form"
+                                   type="submit" value="Add" onclick="addChartToPersona(this)"/>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header card-header-success">
+                            <div class="col-sm-6">
+                                <h4 class="card-title mt-0">Pollution Annual Averages vs. Target</h4>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive table-striped">
+                                <div id="table-1" data-label="Pollution Annual Averages vs. Target">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% if user.is_superuser %}
+                        <div id="table-1-form">
+                            <select class=" form-group btn btn-primary dropdown-toggle"
+                                    data-toggle="dropdown" aria-expanded="false" name="persona">
+                                {% for group in groups %}
+                                    <option class="dropdown-item"
+                                            value="{{ group.id }}">{{ group.name }}</option>
+                                {% endfor %}
+                            </select>
+                            <input id="add-chart-to-persona-button" class="btn btn-primary"
+                                   data-chartid="table-1" data-formid="table-1-form"
+                                   type="submit" value="Add" onclick="addChartToPersona(this)"/>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

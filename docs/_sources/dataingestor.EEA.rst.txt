@@ -1,0 +1,38 @@
+dataingestor.EEA package
+========================
+
+Submodules
+----------
+
+dataingestor.EEA.EEADataSource module
+-------------------------------------
+
+.. automodule:: dataingestor.EEA.EEADataSource
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+dataingestor.EEA.EEAObservationReadingDataSource module
+-------------------------------------------------------
+
+.. automodule:: dataingestor.EEA.EEAObservationReadingDataSource
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+dataingestor.EEA.EEAObservationStationDataSource module
+-------------------------------------------------------
+
+.. automodule:: dataingestor.EEA.EEAObservationStationDataSource
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: dataingestor.EEA
+   :members:
+   :undoc-members:
+   :show-inheritance:

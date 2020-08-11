@@ -1,0 +1,83 @@
+{% extends "airpollution/layout/corejs_script_layout.html" %}
+{% load static %}
+
+{% block jscript %}
+    <script type="text/javascript">
+        const newCardTemplate = Handlebars.compile(document.querySelector('#standard-user-chart-template').innerHTML);
+        document.addEventListener('DOMContentLoaded', () => {
+
+            var mainContentDiv = document.querySelector('#main-content');
+            var groupId = mainContentDiv.dataset['groupid'];
+            console.log(groupId);
+            renderPersona(groupId);
+        });
+
+
+        function renderPersona(groupId) {
+            var row_content_div = document.querySelector('#content-row');
+            row_content_div.innerHTML = "";
+            fetch('view_group/' + groupId)
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (items) {
+                    items = JSON.parse(items);
+                    if (items.length === 0) {
+                        return;
+                    }
+                    items.forEach(function (obj, i) {
+                        var url = obj['fields']['url'];
+                        var label = obj['fields']['label'];
+                        console.log(url);
+                        console.log(label);
+                        var internalChartId = obj['fields']['chart_id'];
+                        var chartDivId = 'chart-div-' + i;
+                        var chartDivIdWithHash = '#' + chartDivId;
+                        var cardDivId = 'card-div' + i;
+
+                        var tempCard = newCardTemplate({
+                            'chart-div-id': chartDivId, 'title': 'Temp Title',
+                            'card-div-id': cardDivId, 'chart-id': internalChartId, 'persona-id': groupId,
+                            'chart-label': label
+                        });
+                        row_content_div.innerHTML += tempCard;
+
+                        fetch(url)
+                            .then(function (response) {
+                                return response.json();
+                            })
+                            .then(function (item) {
+                                var chart_div = document.querySelector(chartDivIdWithHash);
+                                chart_div.innerHTML = "";
+                                Bokeh.embed.embed_item(item, chartDivId);
+                                chart_div.setAttribute('data-url', url);
+                            }).catch((error) => {
+                            var chart_div = document.querySelector(chartDivIdWithHash);
+                            chart_div.innerHTML = "<img style=\"height:200px;width:400px\" src={% static 'airpollution/assets/img/tech-snag.png' %}>";
+                            chart_div.setAttribute('data-url', url);
+                        });
+                    });
+                });
+        }
+
+    </script>
+{% endblock %}
+{% block user-dashboard-navitem-active %}
+    active
+{% endblock %}
+{% block dashboardname %}Persona Dashboard{% endblock %}
+{% block contentbody %}
+    <div id="main-content" class="content" data-groupid="{{ groupid }}">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-2">
+                    <h3 class="card-title mt-0 font-weight-bold lead">User Dashboard</h3>
+                </div>
+            </div>
+
+            <div id="content-row" class="row">
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

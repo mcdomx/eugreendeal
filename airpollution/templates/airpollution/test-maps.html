@@ -1,0 +1,21 @@
+{% extends "airpollution/layout/corejs_script_layout.html" %}
+
+{% block jscript %}
+{#Include any javascript for the visualization here#}
+
+{% endblock %}
+
+{% block default-dashboard-navitem-active %}
+    active
+{% endblock %}
+
+
+{% block dashboardname %} .. include visualization name here ..   {% endblock %}
+{% block contentbody %}
+{#    Include HtML tags with Jinja templating here #}
+    <div class="content" style="height:200px;">
+        {{ div | safe }}
+        {{ script | safe }}
+    </div>
+{% endblock %}
+

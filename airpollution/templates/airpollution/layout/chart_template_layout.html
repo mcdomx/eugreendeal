@@ -1,0 +1,56 @@
+{% extends "airpollution/layout/settings_fancy_layout.html" %}
+{% load static %}
+{% block charttemplatescript %}
+    <script id="chart-template" type="text/x-handlebars-template">
+        {% verbatim %}
+        <div id="{{ card-id }}" class="col-md-6" method="post">
+            {% endverbatim %}
+            <div class="card">
+                <div class="card-header-success">
+                    <div class="col-sm-6" align="left">
+                        {% verbatim %}
+                        <h4 class="card-title mt-0 font-weight-normal">{{ chart-label }}</h4>
+                        {% endverbatim %}
+                    </div>
+                    {% verbatim %}
+                </div>
+                <div id="{{ chart-div-id }}">
+                    {% endverbatim %}
+                    <img style="height:300px;width:400px"
+                         src="{% static 'airpollution/assets/img/gif/pre-loader-2.gif' %}">
+                </div>
+            </div>
+
+            {% verbatim %}
+            <button class="btn btn-primary delete-chart-from-persona-button" data-chartid="{{ chart-id }}"
+                    data-personaid="{{ persona-id }}" type="submit" onclick="deleteChartFromPersona(this)">Delete
+            </button>
+            {% endverbatim %}
+
+        </div>
+
+    </script>
+
+    <script id="standard-user-chart-template" type="text/x-handlebars-template">
+        {% verbatim %}
+        <div id="{{ card-id }}" class="col-md-6" method="post">
+            {% endverbatim %}
+            <div class="card">
+                <div class="card-header-success">
+                    <div class="col-sm-6" align="left">
+                        {% verbatim %}
+                        <h4 class="card-title mt-0 font-weight-normal">{{ chart-label }}</h4>
+                        {% endverbatim %}
+                    </div>
+                    {% verbatim %}
+                </div>
+                <div id="{{ chart-div-id }}">
+                    {% endverbatim %}
+                    <img style="height:300px;width:400px"
+                         src="{% static 'airpollution/assets/img/gif/pre-loader-2.gif' %}">
+                </div>
+            </div>
+        </div>
+
+    </script>
+{% endblock %}

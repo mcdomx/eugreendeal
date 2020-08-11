@@ -1,0 +1,110 @@
+{% extends "airpollution/layout/corejs_script_layout.html" %}
+{% load static %}
+
+{% block jscript %}
+    {% csrf_token %}
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', () => {
+            update();
+
+        });
+
+        function update() {
+            var chart_div = document.querySelector('#table-1');
+            chart_div.innerHTML = "<img style=\"height:300px;width:400px\" src={% static 'airpollution/assets/img/gif/pre-loader-2.gif' %}>";
+            fetch('/pollution_attainment_table')
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (item) {
+                    var chart_div = document.querySelector('#table-1');
+                    chart_div.innerHTML = "";
+                    Bokeh.embed.embed_item(item, 'table-1');
+                    chart_div.setAttribute('data-url', '/pollution_attainment_table');
+                }).catch((error) => {
+                var chart_div = document.querySelector('#table-1');
+                chart_div.innerHTML = "";
+                chart_div.innerHTML = "<img style=\"height:200px;width:400px\" src={% static 'airpollution/assets/img/tech-snag.png' %}>";
+
+            });
+        }
+
+        function addChartToPersona(button) {
+            var csrftoken = jQuery("[name=csrfmiddlewaretoken]").val();
+            var chartid = button.dataset['chartid'];
+            var formid = button.dataset['formid'];
+            var form = document.querySelector('#' + formid);
+            var selectedOption = form.getElementsByTagName('select').persona;
+            let groupId = selectedOption.options[selectedOption.selectedIndex].value;
+            console.log(groupId);
+            console.log(chartid);
+            let url = document.querySelector('#' + chartid).dataset.url;
+            console.log(url);
+            const request = new XMLHttpRequest();
+            {#request.open('GET', '/add_chart_to_persona/' + groupId + '/' + chartid + '/regional');#}
+            request.open('POST', '/add_chart_to_persona/');
+            request.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+            {#request.setRequestHeader('Vary', 'X-Requested-With');#}
+            {#request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');#}
+            request.setRequestHeader('Content-type', 'application/json');
+            request.setRequestHeader("X-CSRFToken", csrftoken);
+            var params = {};
+            params.chart_id = chartid;
+            params.group_id = groupId;
+            params.url = encodeURI(url);
+            request.onload = () => {
+                {#var data = JSON.parse(request.responseText);#}
+                console.log(request.responseText);
+            };
+            request.send(JSON.stringify(params));
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+
+        });
+    </script>
+{% endblock %}
+{% block trends-dashboard-navitem-active %}
+    active
+{% endblock %}
+{% block dashboardname %}Trends Dashboard{% endblock %}
+{% block contentbody %}
+    <div class="content" style="margin-top: 30px;">
+        <div class="container-fluid">
+            <div class="row"></div>
+            <div class="row">
+                <div class="col-md-2">
+                    <h4 class="card-title mt-0">Pollution Goal Attainment</h4>
+                </div>
+                <div class="col-md-10">
+
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="table-1">
+                    </div>
+                    {% if user.is_superuser %}
+                        <div id="reg-rep-ch-1-form">
+                            <select class=" form-group btn btn-primary dropdown-toggle"
+                                    data-toggle="dropdown" aria-expanded="false" name="persona">
+                                {% for group in groups %}
+                                    <option class="dropdown-item"
+                                            value="{{ group.id }}">{{ group.name }}</option>
+                                {% endfor %}
+                            </select>
+                            <input id="add-chart-to-persona-button" class="btn btn-primary"
+                                   data-chartid="reg-rep-ch-1" data-formid="reg-rep-ch-1-form"
+                                   type="submit" value="Add" onclick="addChartToPersona(this)"/>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            
+
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,118 @@
+airpollution.views package
+==========================
+
+Submodules
+----------
+
+airpollution.views.aq\_api\_v1 module
+-------------------------------------
+
+.. automodule:: airpollution.views.aq_api_v1
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+airpollution.views.copernicus\_views module
+-------------------------------------------
+
+.. automodule:: airpollution.views.copernicus_views
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+airpollution.views.daily\_aq\_map module
+----------------------------------------
+
+.. automodule:: airpollution.views.daily_aq_map
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+airpollution.views.eea\_station\_views module
+---------------------------------------------
+
+.. automodule:: airpollution.views.eea_station_views
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+airpollution.views.emissions\_trend\_table\_view module
+-------------------------------------------------------
+
+.. automodule:: airpollution.views.emissions_trend_table_view
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+airpollution.views.nuts\_maps\_views module
+-------------------------------------------
+
+.. automodule:: airpollution.views.nuts_maps_views
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+airpollution.views.pollution\_attainment\_by\_year\_table\_view module
+----------------------------------------------------------------------
+
+.. automodule:: airpollution.views.pollution_attainment_by_year_table_view
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+airpollution.views.pollution\_deltas\_table\_view module
+--------------------------------------------------------
+
+.. automodule:: airpollution.views.pollution_deltas_table_view
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+airpollution.views.pollution\_over\_time\_view module
+-----------------------------------------------------
+
+.. automodule:: airpollution.views.pollution_over_time_view
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+airpollution.views.pollution\_regional\_deltas\_table\_view module
+------------------------------------------------------------------
+
+.. automodule:: airpollution.views.pollution_regional_deltas_table_view
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+airpollution.views.sector\_aq\_plot module
+------------------------------------------
+
+.. automodule:: airpollution.views.sector_aq_plot
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+airpollution.views.target\_heatmap\_view module
+-----------------------------------------------
+
+.. automodule:: airpollution.views.target_heatmap_view
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+airpollution.views.views module
+-------------------------------
+
+.. automodule:: airpollution.views.views
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: airpollution.views
+   :members:
+   :undoc-members:
+   :show-inheritance:

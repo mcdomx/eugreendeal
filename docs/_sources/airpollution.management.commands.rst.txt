@@ -1,0 +1,102 @@
+airpollution.management.commands package
+========================================
+
+Submodules
+----------
+
+airpollution.management.commands.copernicus\_load\_daily\_images module
+-----------------------------------------------------------------------
+
+.. automodule:: airpollution.management.commands.copernicus_load_daily_images
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+airpollution.management.commands.copernicus\_load\_db\_from\_files module
+-------------------------------------------------------------------------
+
+.. automodule:: airpollution.management.commands.copernicus_load_db_from_files
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+airpollution.management.commands.createdefaultpersona module
+------------------------------------------------------------
+
+.. automodule:: airpollution.management.commands.createdefaultpersona
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+airpollution.management.commands.eea\_load\_daily\_rdf\_data module
+-------------------------------------------------------------------
+
+.. automodule:: airpollution.management.commands.eea_load_daily_rdf_data
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+airpollution.management.commands.eea\_load\_db\_from\_files module
+------------------------------------------------------------------
+
+.. automodule:: airpollution.management.commands.eea_load_db_from_files
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+airpollution.management.commands.load\_eea\_station\_data module
+----------------------------------------------------------------
+
+.. automodule:: airpollution.management.commands.load_eea_station_data
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+airpollution.management.commands.load\_eurostat\_population\_data module
+------------------------------------------------------------------------
+
+.. automodule:: airpollution.management.commands.load_eurostat_population_data
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+airpollution.management.commands.load\_nuts\_data module
+--------------------------------------------------------
+
+.. automodule:: airpollution.management.commands.load_nuts_data
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+airpollution.management.commands.load\_pollutants module
+--------------------------------------------------------
+
+.. automodule:: airpollution.management.commands.load_pollutants
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+airpollution.management.commands.populate\_db module
+----------------------------------------------------
+
+.. automodule:: airpollution.management.commands.populate_db
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+airpollution.management.commands.test\_nuts module
+--------------------------------------------------
+
+.. automodule:: airpollution.management.commands.test_nuts
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: airpollution.management.commands
+   :members:
+   :undoc-members:
+   :show-inheritance:

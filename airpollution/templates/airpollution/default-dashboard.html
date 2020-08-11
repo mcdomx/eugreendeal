@@ -1,0 +1,254 @@
+{% extends "airpollution/layout/corejs_script_layout.html" %}
+{% load static %}
+
+{% block jscript %}
+    <script type="text/javascript">
+        var startDate = null;
+        var endDate = null;
+        document.addEventListener('DOMContentLoaded', () => {
+            {#var prevMonthFirstDay = moment().subtract(1, 'months').date(1);#}
+            {#var prevMonthLastDay = moment().date(1).subtract(1, 'days');#}
+            var prevMonthFirstDay = moment().subtract(1, 'weeks').startOf('week');
+            var prevMonthLastDay = moment().subtract(1, 'weeks').endOf('week');
+
+            startDate = prevMonthFirstDay.format('YYYY-MM-DD');
+            endDate = prevMonthLastDay.format('YYYY-MM-DD');
+
+            {#$('#singleselect-pollutants').multiselect();#}
+            {#$('#multiselect-regions').multiselect();#}
+{##}
+{#            $(function () {#}
+{#                $('input[name="daterange"]').daterangepicker({#}
+{#                    opens: 'left',#}
+{#                    startDate: prevMonthFirstDay,#}
+{#                    endDate: prevMonthLastDay#}
+{#                }, function (start, end, label) {#}
+{#                    console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));#}
+{#                    startDate = start.format('YYYY-MM-DD');#}
+{#                    endDate = end.format('YYYY-MM-DD')#}
+{#                });#}
+{#            }#}
+{#            );#}
+
+            var filters = {
+                'startDate': startDate,
+                'endDate': endDate,
+                'countries': null,
+                {#'pollutant': 'O3,PM10,PM25,CO,SO2,NO2'#}
+            };
+
+            filters['pollutant'] = 'PM25';
+            updateDivTrends('def-ch-1', '/pollution_over_time', filters);
+            filters['pollutant'] = 'NO2';
+            updateDivTrends('def-ch-2', '/pollution_over_time', filters);
+
+            filters = {
+                'startDate': startDate,
+                'endDate': endDate
+            };
+            updateDivRegional('def-ch-3', '/daily_aq', filters);
+            updateDivRegional('def-ch-4', '/pollution_regional_deltas_table', filters);
+
+        });
+
+        function updateDivTrends(divId, uri, filters) {
+            let divIdWithHash = '#' + divId;
+            var chart_div = document.querySelector(divIdWithHash);
+            var finalUri = addFiltersToUriTrends(uri, filters);
+
+            console.log(finalUri);
+            chart_div.innerHTML = "<img style=\"height:300px;width:400px\" src={% static 'airpollution/assets/img/gif/pre-loader-2.gif' %}>";
+            fetch(finalUri)
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (item) {
+                    var chart_div = document.querySelector(divIdWithHash);
+                    chart_div.innerHTML = "";
+                    Bokeh.embed.embed_item(item, divId);
+                    chart_div.setAttribute('data-url', finalUri);
+                }).catch((error) => {
+                var chart_div = document.querySelector(divIdWithHash);
+                chart_div.innerHTML = "<img style=\"height:200px;width:400px\" src={% static 'airpollution/assets/img/tech-snag.png' %}>";
+                chart_div.setAttribute('data-url', finalUri);
+            });
+        }
+
+        function addFiltersToUriTrends(uri, filters) {
+            var pollutant = filters['pollutant'];
+            var startDate = filters['startDate'];
+            var endDate = filters['endDate'];
+            var countries = filters['countries'];
+            var finalUri = uri;
+            var filterSuffixUri = '';
+
+            if (pollutant != null) {
+                filterSuffixUri = 'pollutant=' + pollutant;
+            }
+            if (startDate) {
+                if (filterSuffixUri) {
+                    filterSuffixUri += '&';
+                }
+                filterSuffixUri = filterSuffixUri + 'start_date=' + startDate;
+            }
+            if (endDate) {
+                if (filterSuffixUri) {
+                    filterSuffixUri += '&';
+                }
+                filterSuffixUri = filterSuffixUri + 'end_date=' + endDate;
+            }
+            if (countries) {
+                if (filterSuffixUri) {
+                    filterSuffixUri += '&';
+                }
+                filterSuffixUri = filterSuffixUri + 'countries=' + countries;
+            }
+            if (filterSuffixUri != '') {
+                finalUri = finalUri + '?' + filterSuffixUri;
+            }
+            return finalUri;
+        }
+
+        function updateDivRegional(divId, uri, filters) {
+            let divIdWithHash = '#' + divId;
+            var chart_div = document.querySelector(divIdWithHash);
+            var finalUri = addFiltersToUriRegional(uri, filters);
+
+            console.log(finalUri);
+            chart_div.innerHTML = "<img style=\"height:300px;width:400px\" src={% static 'airpollution/assets/img/gif/pre-loader-2.gif' %}>";
+            fetch(finalUri)
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (item) {
+                    var chart_div = document.querySelector(divIdWithHash);
+                    chart_div.innerHTML = "";
+                    Bokeh.embed.embed_item(item, divId);
+                    chart_div.setAttribute('data-url', finalUri);
+                }).catch((error) => {
+                var chart_div = document.querySelector(divIdWithHash);
+                chart_div.innerHTML = "<img style=\"height:200px;width:400px\" src={% static 'airpollution/assets/img/tech-snag.png' %}>";
+                chart_div.setAttribute('data-url', finalUri);
+            });
+        }
+
+        function addFiltersToUriRegional(uri, filters) {
+            var startDate = filters['startDate'];
+            var endDate = filters['endDate'];
+            var finalUri = uri;
+            var filterSuffixUri;
+            if (startDate) {
+                filterSuffixUri = 'start_date=' + startDate;
+            }
+            if (endDate) {
+                if (filterSuffixUri) {
+                    filterSuffixUri += '&';
+                }
+                filterSuffixUri = filterSuffixUri + 'end_date=' + endDate;
+            }
+            if (filterSuffixUri) {
+                finalUri = finalUri + '?' + filterSuffixUri;
+            }
+            return finalUri;
+        }
+
+    </script>
+{% endblock %}
+{% block default-dashboard-navitem-active %}
+    active
+{% endblock %}
+
+{% block contentbody %}
+
+    <div class="content">
+        <div class="container-fluid ">
+            <div class="row">
+                <div class="col-lg-6 col-md-12">
+                    <div class="card">
+                        <div class="card-header card-header-success">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-sm-8">
+                                        <h4 class="card-title mt-0">PM 2.5 Air Quality Trends (Last Week - <em>All EU</em>)</h4>
+{#                                        <p class="card-category"><a href="#">Full Report</a></p>#}
+                                    </div>
+{#                                    <div class="col-sm-6" align="right">#}
+{#                                        <div class="dropdown">#}
+{#                                            <button class="btn btn-secondary dropdown-toggle" type="button"#}
+{#                                                    id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"#}
+{#                                                    aria-expanded="false">#}
+{#                                                Last 4 Months#}
+{#                                            </button>#}
+{#                                            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">#}
+{#                                                <button class="dropdown-item" type="button">Action</button>#}
+{#                                            </div>#}
+{#                                        </div>#}
+{#                                    </div>#}
+                                </div>
+                            </div>
+                        </div>
+                        <div id="def-ch-1" height="340" style="padding:10px;">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-md-12">
+                    <div class="card">
+                        <div class="card-header card-header-success">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-sm-8">
+                                        <h4 class="card-title mt-0">NO2 Air Quality Trend (Last Week - <em>All EU</em>)</h4>
+{#                                        <p class="card-category"><a href="#">Full Report</a></p>#}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="def-ch-2" height="340" style="padding:10px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="card">
+                        <div class="card-header card-header-success">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <h4 class="card-title mt-0">Air Quality by Region vs EU avg (Last Week)</h4>
+{#                                        <p class="card-category"><a href="#">Full Report</a></p>#}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="def-ch-3" class="pt-4"></div>
+                    </div>
+                </div>
+
+                <div class="col-md-7">
+                    <div class="card">
+                        <div class="card-header card-header-success">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-sm-8">
+                                        <h4 class="card-title mt-0">Year-over-year pollution (Last Week)</h4>
+{#                                        <p class="card-category"><a href="#">Full Report</a></p>#}
+                                    </div>
+                                    <div class="col-sm-8" align="right"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive table-striped">
+                                <div id="def-ch-4"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

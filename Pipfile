@@ -1,0 +1,35 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+django = "*"
+requests = "*"
+rdflib = "*"
+numpy = "*"
+netcdf4 = "*"
+beautifulsoup4 = "*"
+tqdm = "*"
+pandas = "*"
+bokeh = "*"
+django-extensions = "*"
+#jupyter = "*"
+#ipython = "*"
+#matplotlib = "*"
+geopandas = "*"
+descartes = "*"
+psycopg2-binary = "*"
+#psycopg2 = "*"
+rtree = "*"
+gunicorn = "*"
+scipy = "*"
+pygam = "*"
+django-storages = "*"
+boto3 = "*"
+django-coverage-plugin = "*"
+
+[requires]
+python_version = "3.7"

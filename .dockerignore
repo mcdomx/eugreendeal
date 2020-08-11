@@ -1,0 +1,11 @@
+airpollution/media/**
+**/.git
+**/.ipynb
+airpollution/migrations
+tests/**
+htmlcov/**
+htmlcov
+*.tsv
+*.sql
+htmlcoverage
+htmlcoverage/**

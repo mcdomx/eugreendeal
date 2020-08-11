@@ -1,0 +1,18 @@
+airpollution.management package
+===============================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   airpollution.management.commands
+
+Module contents
+---------------
+
+.. automodule:: airpollution.management
+   :members:
+   :undoc-members:
+   :show-inheritance:

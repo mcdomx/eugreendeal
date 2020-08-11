@@ -1,0 +1,436 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>airpollution.tests package &mdash; EUGreendeal  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="airpollution.views package" href="airpollution.views.html" />
+    <link rel="prev" title="airpollution.static package" href="airpollution.static.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> EUGreendeal
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">eugreendeal</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="airpollution.html">airpollution package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="airpollution.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="airpollution.management.html">airpollution.management package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="airpollution.models.html">airpollution.models package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="airpollution.static.html">airpollution.static package</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">airpollution.tests package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="airpollution.views.html">airpollution.views package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="airpollution.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="airpollution.html#module-airpollution.admin">airpollution.admin module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="airpollution.html#module-airpollution.apps">airpollution.apps module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="airpollution.html#module-airpollution.urls">airpollution.urls module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="airpollution.html#module-airpollution">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dataingestor.html">dataingestor package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eugreendeal.html">eugreendeal package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manage.html">manage module</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">EUGreendeal</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="modules.html">eugreendeal</a> &raquo;</li>
+        
+          <li><a href="airpollution.html">airpollution package</a> &raquo;</li>
+        
+      <li>airpollution.tests package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/airpollution.tests.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="airpollution-tests-package">
+<h1>airpollution.tests package<a class="headerlink" href="#airpollution-tests-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-airpollution.tests.daily_aq_tests">
+<span id="airpollution-tests-daily-aq-tests-module"></span><h2>airpollution.tests.daily_aq_tests module<a class="headerlink" href="#module-airpollution.tests.daily_aq_tests" title="Permalink to this headline">¶</a></h2>
+<p>Author: Carly Gloge
+Test for the map of daily pollution data</p>
+<dl class="py class">
+<dt id="airpollution.tests.daily_aq_tests.TestDailyAQMap">
+<em class="property">class </em><code class="sig-prename descclassname">airpollution.tests.daily_aq_tests.</code><code class="sig-name descname">TestDailyAQMap</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">methodName</span><span class="o">=</span><span class="default_value">'runTest'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.tests.daily_aq_tests.TestDailyAQMap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.test.testcases.TestCase</span></code></p>
+<dl class="py method">
+<dt id="airpollution.tests.daily_aq_tests.TestDailyAQMap.setUp">
+<code class="sig-name descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.tests.daily_aq_tests.TestDailyAQMap.setUp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hook method for setting up the test fixture before exercising it.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="airpollution.tests.daily_aq_tests.TestDailyAQMap.test_daily_aq_map">
+<code class="sig-name descname">test_daily_aq_map</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.tests.daily_aq_tests.TestDailyAQMap.test_daily_aq_map" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-airpollution.tests.eeamodeltests">
+<span id="airpollution-tests-eeamodeltests-module"></span><h2>airpollution.tests.eeamodeltests module<a class="headerlink" href="#module-airpollution.tests.eeamodeltests" title="Permalink to this headline">¶</a></h2>
+<p>Author: Hemant Bajpai
+Test for EEA Data Model</p>
+<dl class="py class">
+<dt id="airpollution.tests.eeamodeltests.EEAModelTests">
+<em class="property">class </em><code class="sig-prename descclassname">airpollution.tests.eeamodeltests.</code><code class="sig-name descname">EEAModelTests</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">methodName</span><span class="o">=</span><span class="default_value">'runTest'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.tests.eeamodeltests.EEAModelTests" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.test.testcases.TestCase</span></code></p>
+<dl class="py method">
+<dt id="airpollution.tests.eeamodeltests.EEAModelTests.setUp">
+<code class="sig-name descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.tests.eeamodeltests.EEAModelTests.setUp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hook method for setting up the test fixture before exercising it.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="airpollution.tests.eeamodeltests.EEAModelTests.test_eeadatamodel_get_sectors_info">
+<code class="sig-name descname">test_eeadatamodel_get_sectors_info</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.tests.eeamodeltests.EEAModelTests.test_eeadatamodel_get_sectors_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test EEADataModel.get_sectors_info</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-airpollution.tests.eurostatmodeltests">
+<span id="airpollution-tests-eurostatmodeltests-module"></span><h2>airpollution.tests.eurostatmodeltests module<a class="headerlink" href="#module-airpollution.tests.eurostatmodeltests" title="Permalink to this headline">¶</a></h2>
+<p>Author: Hemant Bajpai
+Test for EuroStat Data Model</p>
+<dl class="py class">
+<dt id="airpollution.tests.eurostatmodeltests.EurostatModelTests">
+<em class="property">class </em><code class="sig-prename descclassname">airpollution.tests.eurostatmodeltests.</code><code class="sig-name descname">EurostatModelTests</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">methodName</span><span class="o">=</span><span class="default_value">'runTest'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.tests.eurostatmodeltests.EurostatModelTests" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.test.testcases.TestCase</span></code></p>
+<dl class="py method">
+<dt id="airpollution.tests.eurostatmodeltests.EurostatModelTests.setUp">
+<code class="sig-name descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.tests.eurostatmodeltests.EurostatModelTests.setUp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hook method for setting up the test fixture before exercising it.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="airpollution.tests.eurostatmodeltests.EurostatModelTests.test_eurostatdatamodel_get_population_info">
+<code class="sig-name descname">test_eurostatdatamodel_get_population_info</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.tests.eurostatmodeltests.EurostatModelTests.test_eurostatdatamodel_get_population_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test EurostatDataModel.get_population_info</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-airpollution.tests.nutsregions_tests">
+<span id="airpollution-tests-nutsregions-tests-module"></span><h2>airpollution.tests.nutsregions_tests module<a class="headerlink" href="#module-airpollution.tests.nutsregions_tests" title="Permalink to this headline">¶</a></h2>
+<p>Author: Alan Martinson
+Test for nuts_regions</p>
+<dl class="py class">
+<dt id="airpollution.tests.nutsregions_tests.NutsRegionsTest">
+<em class="property">class </em><code class="sig-prename descclassname">airpollution.tests.nutsregions_tests.</code><code class="sig-name descname">NutsRegionsTest</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">methodName</span><span class="o">=</span><span class="default_value">'runTest'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.tests.nutsregions_tests.NutsRegionsTest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.test.testcases.TestCase</span></code></p>
+<dl class="py method">
+<dt id="airpollution.tests.nutsregions_tests.NutsRegionsTest.setUp">
+<code class="sig-name descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.tests.nutsregions_tests.NutsRegionsTest.setUp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hook method for setting up the test fixture before exercising it.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="airpollution.tests.nutsregions_tests.NutsRegionsTest.test_Nutsregion">
+<code class="sig-name descname">test_Nutsregion</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.tests.nutsregions_tests.NutsRegionsTest.test_Nutsregion" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-airpollution.tests.observations_tests">
+<span id="airpollution-tests-observations-tests-module"></span><h2>airpollution.tests.observations_tests module<a class="headerlink" href="#module-airpollution.tests.observations_tests" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="airpollution.tests.observations_tests.ObservationStationTest">
+<em class="property">class </em><code class="sig-prename descclassname">airpollution.tests.observations_tests.</code><code class="sig-name descname">ObservationStationTest</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">methodName</span><span class="o">=</span><span class="default_value">'runTest'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.tests.observations_tests.ObservationStationTest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.test.testcases.TestCase</span></code></p>
+<dl class="py method">
+<dt id="airpollution.tests.observations_tests.ObservationStationTest.setUp">
+<code class="sig-name descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.tests.observations_tests.ObservationStationTest.setUp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hook method for setting up the test fixture before exercising it.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="airpollution.tests.observations_tests.ObservationStationTest.test_annual">
+<code class="sig-name descname">test_annual</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.tests.observations_tests.ObservationStationTest.test_annual" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="airpollution.tests.observations_tests.ObservationStationTest.test_daily">
+<code class="sig-name descname">test_daily</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.tests.observations_tests.ObservationStationTest.test_daily" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="airpollution.tests.observations_tests.ObservationStationTest.test_get_country_code">
+<code class="sig-name descname">test_get_country_code</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.tests.observations_tests.ObservationStationTest.test_get_country_code" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="airpollution.tests.observations_tests.ObservationStationTest.test_get_stratified_stations">
+<code class="sig-name descname">test_get_stratified_stations</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.tests.observations_tests.ObservationStationTest.test_get_stratified_stations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-airpollution.tests.pollutants_tests">
+<span id="airpollution-tests-pollutants-tests-module"></span><h2>airpollution.tests.pollutants_tests module<a class="headerlink" href="#module-airpollution.tests.pollutants_tests" title="Permalink to this headline">¶</a></h2>
+<p>Author: Alan Martinson
+Test for models_pollutants</p>
+<dl class="py class">
+<dt id="airpollution.tests.pollutants_tests.PollutantsMeasurementTest">
+<em class="property">class </em><code class="sig-prename descclassname">airpollution.tests.pollutants_tests.</code><code class="sig-name descname">PollutantsMeasurementTest</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">methodName</span><span class="o">=</span><span class="default_value">'runTest'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.tests.pollutants_tests.PollutantsMeasurementTest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.test.testcases.TestCase</span></code></p>
+<dl class="py method">
+<dt id="airpollution.tests.pollutants_tests.PollutantsMeasurementTest.setUp">
+<code class="sig-name descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.tests.pollutants_tests.PollutantsMeasurementTest.setUp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hook method for setting up the test fixture before exercising it.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="airpollution.tests.pollutants_tests.PollutantsMeasurementTest.test_Measurement">
+<code class="sig-name descname">test_Measurement</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.tests.pollutants_tests.PollutantsMeasurementTest.test_Measurement" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="airpollution.tests.pollutants_tests.PollutantsPollutantTest">
+<em class="property">class </em><code class="sig-prename descclassname">airpollution.tests.pollutants_tests.</code><code class="sig-name descname">PollutantsPollutantTest</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">methodName</span><span class="o">=</span><span class="default_value">'runTest'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.tests.pollutants_tests.PollutantsPollutantTest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.test.testcases.TestCase</span></code></p>
+<dl class="py method">
+<dt id="airpollution.tests.pollutants_tests.PollutantsPollutantTest.setUp">
+<code class="sig-name descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.tests.pollutants_tests.PollutantsPollutantTest.setUp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hook method for setting up the test fixture before exercising it.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="airpollution.tests.pollutants_tests.PollutantsPollutantTest.test_Pollutant">
+<code class="sig-name descname">test_Pollutant</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.tests.pollutants_tests.PollutantsPollutantTest.test_Pollutant" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="airpollution.tests.pollutants_tests.PollutantsTargetTest">
+<em class="property">class </em><code class="sig-prename descclassname">airpollution.tests.pollutants_tests.</code><code class="sig-name descname">PollutantsTargetTest</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">methodName</span><span class="o">=</span><span class="default_value">'runTest'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.tests.pollutants_tests.PollutantsTargetTest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.test.testcases.TestCase</span></code></p>
+<dl class="py method">
+<dt id="airpollution.tests.pollutants_tests.PollutantsTargetTest.setUp">
+<code class="sig-name descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.tests.pollutants_tests.PollutantsTargetTest.setUp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hook method for setting up the test fixture before exercising it.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="airpollution.tests.pollutants_tests.PollutantsTargetTest.test_Target">
+<code class="sig-name descname">test_Target</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.tests.pollutants_tests.PollutantsTargetTest.test_Target" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-airpollution.tests.tests">
+<span id="airpollution-tests-tests-module"></span><h2>airpollution.tests.tests module<a class="headerlink" href="#module-airpollution.tests.tests" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="airpollution.tests.tests.SatelliteImageFilesTestCase">
+<em class="property">class </em><code class="sig-prename descclassname">airpollution.tests.tests.</code><code class="sig-name descname">SatelliteImageFilesTestCase</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">methodName</span><span class="o">=</span><span class="default_value">'runTest'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.tests.tests.SatelliteImageFilesTestCase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.test.testcases.TestCase</span></code></p>
+<dl class="py method">
+<dt id="airpollution.tests.tests.SatelliteImageFilesTestCase.setUp">
+<code class="sig-name descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.tests.tests.SatelliteImageFilesTestCase.setUp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hook method for setting up the test fixture before exercising it.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="airpollution.tests.tests.SatelliteImageFilesTestCase.test_satelliteimagefiles_get_sat_image">
+<code class="sig-name descname">test_satelliteimagefiles_get_sat_image</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.tests.tests.SatelliteImageFilesTestCase.test_satelliteimagefiles_get_sat_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test SatelliteImageFiles.get_sat_image</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-airpollution.tests">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-airpollution.tests" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="airpollution.views.html" class="btn btn-neutral float-right" title="airpollution.views package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="airpollution.static.html" class="btn btn-neutral float-left" title="airpollution.static package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Alan Martinson, Carly Gloge, Hemant Bajpai, Mark McDonald, Pritam K Dey, Taylor Meyer
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

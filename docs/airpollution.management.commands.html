@@ -1,0 +1,560 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>airpollution.management.commands package &mdash; EUGreendeal  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="airpollution.models package" href="airpollution.models.html" />
+    <link rel="prev" title="airpollution.management package" href="airpollution.management.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> EUGreendeal
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">eugreendeal</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="airpollution.html">airpollution package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="airpollution.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="airpollution.management.html">airpollution.management package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="airpollution.models.html">airpollution.models package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="airpollution.static.html">airpollution.static package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="airpollution.tests.html">airpollution.tests package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="airpollution.views.html">airpollution.views package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="airpollution.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="airpollution.html#module-airpollution.admin">airpollution.admin module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="airpollution.html#module-airpollution.apps">airpollution.apps module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="airpollution.html#module-airpollution.urls">airpollution.urls module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="airpollution.html#module-airpollution">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dataingestor.html">dataingestor package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eugreendeal.html">eugreendeal package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manage.html">manage module</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">EUGreendeal</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="modules.html">eugreendeal</a> &raquo;</li>
+        
+          <li><a href="airpollution.html">airpollution package</a> &raquo;</li>
+        
+          <li><a href="airpollution.management.html">airpollution.management package</a> &raquo;</li>
+        
+      <li>airpollution.management.commands package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/airpollution.management.commands.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="airpollution-management-commands-package">
+<h1>airpollution.management.commands package<a class="headerlink" href="#airpollution-management-commands-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-airpollution.management.commands.copernicus_load_daily_images">
+<span id="airpollution-management-commands-copernicus-load-daily-images-module"></span><h2>airpollution.management.commands.copernicus_load_daily_images module<a class="headerlink" href="#module-airpollution.management.commands.copernicus_load_daily_images" title="Permalink to this headline">¶</a></h2>
+<p>author: Mark McDonald
+This module will load a day’s images from the copernicus api.
+If the date is not specified, the prior day will be downloaded.
+Usage: python manage.py copernicus_load_daily_images</p>
+<dl class="py class">
+<dt id="airpollution.management.commands.copernicus_load_daily_images.Command">
+<em class="property">class </em><code class="sig-prename descclassname">airpollution.management.commands.copernicus_load_daily_images.</code><code class="sig-name descname">Command</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">stdout</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">stderr</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">no_color</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">force_color</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.management.commands.copernicus_load_daily_images.Command" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.core.management.base.BaseCommand</span></code></p>
+<dl class="py method">
+<dt id="airpollution.management.commands.copernicus_load_daily_images.Command.add_arguments">
+<code class="sig-name descname">add_arguments</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">parser</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.management.commands.copernicus_load_daily_images.Command.add_arguments" title="Permalink to this definition">¶</a></dt>
+<dd><p>Entry point for subclassed commands to add custom arguments.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="airpollution.management.commands.copernicus_load_daily_images.Command.handle">
+<code class="sig-name descname">handle</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">options</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.management.commands.copernicus_load_daily_images.Command.handle" title="Permalink to this definition">¶</a></dt>
+<dd><p>The actual logic of the command. Subclasses must implement
+this method.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="airpollution.management.commands.copernicus_load_daily_images.Command.help">
+<code class="sig-name descname">help</code><em class="property"> = 'Load daily Copernicus image files into the database.'</em><a class="headerlink" href="#airpollution.management.commands.copernicus_load_daily_images.Command.help" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-airpollution.management.commands.copernicus_load_db_from_files">
+<span id="airpollution-management-commands-copernicus-load-db-from-files-module"></span><h2>airpollution.management.commands.copernicus_load_db_from_files module<a class="headerlink" href="#module-airpollution.management.commands.copernicus_load_db_from_files" title="Permalink to this headline">¶</a></h2>
+<p>author: Mark McDonald
+This module will load the application database to include copernicus data
+based on files that are already available.
+Usage: python manage.py copernicus_load_db_from_files</p>
+<dl class="py class">
+<dt id="airpollution.management.commands.copernicus_load_db_from_files.Command">
+<em class="property">class </em><code class="sig-prename descclassname">airpollution.management.commands.copernicus_load_db_from_files.</code><code class="sig-name descname">Command</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">stdout</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">stderr</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">no_color</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">force_color</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.management.commands.copernicus_load_db_from_files.Command" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.core.management.base.BaseCommand</span></code></p>
+<dl class="py method">
+<dt id="airpollution.management.commands.copernicus_load_db_from_files.Command.add_arguments">
+<code class="sig-name descname">add_arguments</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">parser</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.management.commands.copernicus_load_db_from_files.Command.add_arguments" title="Permalink to this definition">¶</a></dt>
+<dd><p>Entry point for subclassed commands to add custom arguments.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="airpollution.management.commands.copernicus_load_db_from_files.Command.handle">
+<code class="sig-name descname">handle</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">options</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.management.commands.copernicus_load_db_from_files.Command.handle" title="Permalink to this definition">¶</a></dt>
+<dd><p>The actual logic of the command. Subclasses must implement
+this method.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="airpollution.management.commands.copernicus_load_db_from_files.Command.help">
+<code class="sig-name descname">help</code><em class="property"> = &quot;Load existing Copernicus data files into the database. --root_path = search for files under this path (def: MEDIA_ROOT).  --ext = search for files with this extenstion (def: '.nc).&quot;</em><a class="headerlink" href="#airpollution.management.commands.copernicus_load_db_from_files.Command.help" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-airpollution.management.commands.createdefaultpersona">
+<span id="airpollution-management-commands-createdefaultpersona-module"></span><h2>airpollution.management.commands.createdefaultpersona module<a class="headerlink" href="#module-airpollution.management.commands.createdefaultpersona" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="airpollution.management.commands.createdefaultpersona.Command">
+<em class="property">class </em><code class="sig-prename descclassname">airpollution.management.commands.createdefaultpersona.</code><code class="sig-name descname">Command</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">stdout</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">stderr</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">no_color</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">force_color</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.management.commands.createdefaultpersona.Command" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.core.management.base.BaseCommand</span></code></p>
+<p>Command class to create a default persona when initializing database for the first time</p>
+<dl class="py attribute">
+<dt id="airpollution.management.commands.createdefaultpersona.Command.args">
+<code class="sig-name descname">args</code><em class="property"> = 'no args required'</em><a class="headerlink" href="#airpollution.management.commands.createdefaultpersona.Command.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="airpollution.management.commands.createdefaultpersona.Command.handle">
+<code class="sig-name descname">handle</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">options</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.management.commands.createdefaultpersona.Command.handle" title="Permalink to this definition">¶</a></dt>
+<dd><p>The actual logic of the command. Subclasses must implement
+this method.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="airpollution.management.commands.createdefaultpersona.Command.help">
+<code class="sig-name descname">help</code><em class="property"> = 'Create a default persona to initialize persona groups'</em><a class="headerlink" href="#airpollution.management.commands.createdefaultpersona.Command.help" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-airpollution.management.commands.eea_load_daily_rdf_data">
+<span id="airpollution-management-commands-eea-load-daily-rdf-data-module"></span><h2>airpollution.management.commands.eea_load_daily_rdf_data module<a class="headerlink" href="#module-airpollution.management.commands.eea_load_daily_rdf_data" title="Permalink to this headline">¶</a></h2>
+<p>author: Hemant Bajpai
+This module will load RDF data from EEA source.
+This command takes couple of hours to run so it is supposed to be done once a day.
+Usage: python manage.py eea_load_daily_rdf_data</p>
+<dl class="py class">
+<dt id="airpollution.management.commands.eea_load_daily_rdf_data.Command">
+<em class="property">class </em><code class="sig-prename descclassname">airpollution.management.commands.eea_load_daily_rdf_data.</code><code class="sig-name descname">Command</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">stdout</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">stderr</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">no_color</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">force_color</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.management.commands.eea_load_daily_rdf_data.Command" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.core.management.base.BaseCommand</span></code></p>
+<dl class="py method">
+<dt id="airpollution.management.commands.eea_load_daily_rdf_data.Command.add_arguments">
+<code class="sig-name descname">add_arguments</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">parser</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.management.commands.eea_load_daily_rdf_data.Command.add_arguments" title="Permalink to this definition">¶</a></dt>
+<dd><p>Entry point for subclassed commands to add custom arguments.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="airpollution.management.commands.eea_load_daily_rdf_data.Command.handle">
+<code class="sig-name descname">handle</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">options</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.management.commands.eea_load_daily_rdf_data.Command.handle" title="Permalink to this definition">¶</a></dt>
+<dd><p>The actual logic of the command. Subclasses must implement
+this method.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="airpollution.management.commands.eea_load_daily_rdf_data.Command.help">
+<code class="sig-name descname">help</code><em class="property"> = 'Load daily EEA rdf data into the database.'</em><a class="headerlink" href="#airpollution.management.commands.eea_load_daily_rdf_data.Command.help" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-airpollution.management.commands.eea_load_db_from_files">
+<span id="airpollution-management-commands-eea-load-db-from-files-module"></span><h2>airpollution.management.commands.eea_load_db_from_files module<a class="headerlink" href="#module-airpollution.management.commands.eea_load_db_from_files" title="Permalink to this headline">¶</a></h2>
+<p>author: Hemant Bajpai
+This module will load the application database to include EEA data
+based on files that are already available.
+Usage: python manage.py eea_load_db_from_files</p>
+<dl class="py class">
+<dt id="airpollution.management.commands.eea_load_db_from_files.Command">
+<em class="property">class </em><code class="sig-prename descclassname">airpollution.management.commands.eea_load_db_from_files.</code><code class="sig-name descname">Command</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">stdout</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">stderr</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">no_color</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">force_color</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.management.commands.eea_load_db_from_files.Command" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.core.management.base.BaseCommand</span></code></p>
+<dl class="py method">
+<dt id="airpollution.management.commands.eea_load_db_from_files.Command.handle">
+<code class="sig-name descname">handle</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">options</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.management.commands.eea_load_db_from_files.Command.handle" title="Permalink to this definition">¶</a></dt>
+<dd><p>The actual logic of the command. Subclasses must implement
+this method.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="airpollution.management.commands.eea_load_db_from_files.Command.help">
+<code class="sig-name descname">help</code><em class="property"> = 'Load existing EEA data files into the database.'</em><a class="headerlink" href="#airpollution.management.commands.eea_load_db_from_files.Command.help" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-airpollution.management.commands.load_eea_station_data">
+<span id="airpollution-management-commands-load-eea-station-data-module"></span><h2>airpollution.management.commands.load_eea_station_data module<a class="headerlink" href="#module-airpollution.management.commands.load_eea_station_data" title="Permalink to this headline">¶</a></h2>
+<p>author: Mark McDonald
+This module will load tmeta data for pollution observation stations.
+Usage: python manage.py load_eea_station_data –year_from 2019 –year_to 2020 –load_from_file 1</p>
+<dl class="py class">
+<dt id="airpollution.management.commands.load_eea_station_data.Command">
+<em class="property">class </em><code class="sig-prename descclassname">airpollution.management.commands.load_eea_station_data.</code><code class="sig-name descname">Command</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">stdout</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">stderr</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">no_color</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">force_color</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.management.commands.load_eea_station_data.Command" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.core.management.base.BaseCommand</span></code></p>
+<dl class="py method">
+<dt id="airpollution.management.commands.load_eea_station_data.Command.add_arguments">
+<code class="sig-name descname">add_arguments</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">parser</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.management.commands.load_eea_station_data.Command.add_arguments" title="Permalink to this definition">¶</a></dt>
+<dd><p>Entry point for subclassed commands to add custom arguments.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="airpollution.management.commands.load_eea_station_data.Command.handle">
+<code class="sig-name descname">handle</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">options</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.management.commands.load_eea_station_data.Command.handle" title="Permalink to this definition">¶</a></dt>
+<dd><p>The actual logic of the command. Subclasses must implement
+this method.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="airpollution.management.commands.load_eea_station_data.Command.help">
+<code class="sig-name descname">help</code><em class="property"> = &quot;Load new metadata for EEA observation stations.  File must be located in 'media/observation_data' directory. Then load observations.&quot;</em><a class="headerlink" href="#airpollution.management.commands.load_eea_station_data.Command.help" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-airpollution.management.commands.load_eurostat_population_data">
+<span id="airpollution-management-commands-load-eurostat-population-data-module"></span><h2>airpollution.management.commands.load_eurostat_population_data module<a class="headerlink" href="#module-airpollution.management.commands.load_eurostat_population_data" title="Permalink to this headline">¶</a></h2>
+<p>author: Hemant Bajpai
+This module will load population data from eurostat source.
+Usage: python manage.py load_eurostat_population_data</p>
+<dl class="py class">
+<dt id="airpollution.management.commands.load_eurostat_population_data.Command">
+<em class="property">class </em><code class="sig-prename descclassname">airpollution.management.commands.load_eurostat_population_data.</code><code class="sig-name descname">Command</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">stdout</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">stderr</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">no_color</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">force_color</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.management.commands.load_eurostat_population_data.Command" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.core.management.base.BaseCommand</span></code></p>
+<dl class="py method">
+<dt id="airpollution.management.commands.load_eurostat_population_data.Command.add_arguments">
+<code class="sig-name descname">add_arguments</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">parser</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.management.commands.load_eurostat_population_data.Command.add_arguments" title="Permalink to this definition">¶</a></dt>
+<dd><p>Entry point for subclassed commands to add custom arguments.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="airpollution.management.commands.load_eurostat_population_data.Command.handle">
+<code class="sig-name descname">handle</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">options</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.management.commands.load_eurostat_population_data.Command.handle" title="Permalink to this definition">¶</a></dt>
+<dd><p>The actual logic of the command. Subclasses must implement
+this method.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="airpollution.management.commands.load_eurostat_population_data.Command.help">
+<code class="sig-name descname">help</code><em class="property"> = ''</em><a class="headerlink" href="#airpollution.management.commands.load_eurostat_population_data.Command.help" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-airpollution.management.commands.load_nuts_data">
+<span id="airpollution-management-commands-load-nuts-data-module"></span><h2>airpollution.management.commands.load_nuts_data module<a class="headerlink" href="#module-airpollution.management.commands.load_nuts_data" title="Permalink to this headline">¶</a></h2>
+<p>author: Mark McDonald
+This module will load NUTS data from locally stored files
+Usage: python manage.py load_nuts_data</p>
+<dl class="py class">
+<dt id="airpollution.management.commands.load_nuts_data.Command">
+<em class="property">class </em><code class="sig-prename descclassname">airpollution.management.commands.load_nuts_data.</code><code class="sig-name descname">Command</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">stdout</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">stderr</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">no_color</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">force_color</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.management.commands.load_nuts_data.Command" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.core.management.base.BaseCommand</span></code></p>
+<dl class="py method">
+<dt id="airpollution.management.commands.load_nuts_data.Command.add_arguments">
+<code class="sig-name descname">add_arguments</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">parser</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.management.commands.load_nuts_data.Command.add_arguments" title="Permalink to this definition">¶</a></dt>
+<dd><p>Entry point for subclassed commands to add custom arguments.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="airpollution.management.commands.load_nuts_data.Command.handle">
+<code class="sig-name descname">handle</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">options</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.management.commands.load_nuts_data.Command.handle" title="Permalink to this definition">¶</a></dt>
+<dd><p>The actual logic of the command. Subclasses must implement
+this method.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="airpollution.management.commands.load_nuts_data.Command.help">
+<code class="sig-name descname">help</code><em class="property"> = &quot;Load NUTS map data from geojson files.  JSON files must come from File must be located in 'media/observation_data' directory. Then load observations.&quot;</em><a class="headerlink" href="#airpollution.management.commands.load_nuts_data.Command.help" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-airpollution.management.commands.load_pollutants">
+<span id="airpollution-management-commands-load-pollutants-module"></span><h2>airpollution.management.commands.load_pollutants module<a class="headerlink" href="#module-airpollution.management.commands.load_pollutants" title="Permalink to this headline">¶</a></h2>
+<p>author: Mark McDonald</p>
+<dl class="py class">
+<dt id="airpollution.management.commands.load_pollutants.Command">
+<em class="property">class </em><code class="sig-prename descclassname">airpollution.management.commands.load_pollutants.</code><code class="sig-name descname">Command</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">stdout</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">stderr</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">no_color</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">force_color</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.management.commands.load_pollutants.Command" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.core.management.base.BaseCommand</span></code></p>
+<dl class="py method">
+<dt id="airpollution.management.commands.load_pollutants.Command.add_arguments">
+<code class="sig-name descname">add_arguments</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">parser</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.management.commands.load_pollutants.Command.add_arguments" title="Permalink to this definition">¶</a></dt>
+<dd><p>Entry point for subclassed commands to add custom arguments.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="airpollution.management.commands.load_pollutants.Command.handle">
+<code class="sig-name descname">handle</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">options</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.management.commands.load_pollutants.Command.handle" title="Permalink to this definition">¶</a></dt>
+<dd><p>The actual logic of the command. Subclasses must implement
+this method.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="airpollution.management.commands.load_pollutants.Command.help">
+<code class="sig-name descname">help</code><em class="property"> = ''</em><a class="headerlink" href="#airpollution.management.commands.load_pollutants.Command.help" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-airpollution.management.commands.populate_db">
+<span id="airpollution-management-commands-populate-db-module"></span><h2>airpollution.management.commands.populate_db module<a class="headerlink" href="#module-airpollution.management.commands.populate_db" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="airpollution.management.commands.populate_db.Command">
+<em class="property">class </em><code class="sig-prename descclassname">airpollution.management.commands.populate_db.</code><code class="sig-name descname">Command</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">stdout</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">stderr</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">no_color</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">force_color</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.management.commands.populate_db.Command" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.core.management.base.BaseCommand</span></code></p>
+<p>Command class to populate db from scratch.</p>
+<dl class="py attribute">
+<dt id="airpollution.management.commands.populate_db.Command.args">
+<code class="sig-name descname">args</code><em class="property"> = 'no args required'</em><a class="headerlink" href="#airpollution.management.commands.populate_db.Command.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="airpollution.management.commands.populate_db.Command.create_some_dummy_data">
+<em class="property">static </em><code class="sig-name descname">create_some_dummy_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.management.commands.populate_db.Command.create_some_dummy_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="airpollution.management.commands.populate_db.Command.handle">
+<code class="sig-name descname">handle</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">options</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.management.commands.populate_db.Command.handle" title="Permalink to this definition">¶</a></dt>
+<dd><p>The actual logic of the command. Subclasses must implement
+this method.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="airpollution.management.commands.populate_db.Command.help">
+<code class="sig-name descname">help</code><em class="property"> = 'populate DB with initial dummy values'</em><a class="headerlink" href="#airpollution.management.commands.populate_db.Command.help" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-airpollution.management.commands.test_nuts">
+<span id="airpollution-management-commands-test-nuts-module"></span><h2>airpollution.management.commands.test_nuts module<a class="headerlink" href="#module-airpollution.management.commands.test_nuts" title="Permalink to this headline">¶</a></h2>
+<p>author: Mark McDonald
+For testing</p>
+<dl class="py class">
+<dt id="airpollution.management.commands.test_nuts.Command">
+<em class="property">class </em><code class="sig-prename descclassname">airpollution.management.commands.test_nuts.</code><code class="sig-name descname">Command</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">stdout</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">stderr</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">no_color</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">force_color</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.management.commands.test_nuts.Command" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.core.management.base.BaseCommand</span></code></p>
+<dl class="py method">
+<dt id="airpollution.management.commands.test_nuts.Command.add_arguments">
+<code class="sig-name descname">add_arguments</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">parser</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.management.commands.test_nuts.Command.add_arguments" title="Permalink to this definition">¶</a></dt>
+<dd><p>Entry point for subclassed commands to add custom arguments.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="airpollution.management.commands.test_nuts.Command.handle">
+<code class="sig-name descname">handle</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">options</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.management.commands.test_nuts.Command.handle" title="Permalink to this definition">¶</a></dt>
+<dd><p>The actual logic of the command. Subclasses must implement
+this method.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="airpollution.management.commands.test_nuts.Command.help">
+<code class="sig-name descname">help</code><em class="property"> = ''</em><a class="headerlink" href="#airpollution.management.commands.test_nuts.Command.help" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-airpollution.management.commands">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-airpollution.management.commands" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="airpollution.models.html" class="btn btn-neutral float-right" title="airpollution.models package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="airpollution.management.html" class="btn btn-neutral float-left" title="airpollution.management package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Alan Martinson, Carly Gloge, Hemant Bajpai, Mark McDonald, Pritam K Dey, Taylor Meyer
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

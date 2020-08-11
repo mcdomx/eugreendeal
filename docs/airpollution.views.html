@@ -1,0 +1,863 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>airpollution.views package &mdash; EUGreendeal  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="dataingestor package" href="dataingestor.html" />
+    <link rel="prev" title="airpollution.tests package" href="airpollution.tests.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> EUGreendeal
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">eugreendeal</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="airpollution.html">airpollution package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="airpollution.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="airpollution.management.html">airpollution.management package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="airpollution.models.html">airpollution.models package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="airpollution.static.html">airpollution.static package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="airpollution.tests.html">airpollution.tests package</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">airpollution.views package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="airpollution.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="airpollution.html#module-airpollution.admin">airpollution.admin module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="airpollution.html#module-airpollution.apps">airpollution.apps module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="airpollution.html#module-airpollution.urls">airpollution.urls module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="airpollution.html#module-airpollution">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dataingestor.html">dataingestor package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eugreendeal.html">eugreendeal package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manage.html">manage module</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">EUGreendeal</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="modules.html">eugreendeal</a> &raquo;</li>
+        
+          <li><a href="airpollution.html">airpollution package</a> &raquo;</li>
+        
+      <li>airpollution.views package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/airpollution.views.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="airpollution-views-package">
+<h1>airpollution.views package<a class="headerlink" href="#airpollution-views-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-airpollution.views.aq_api_v1">
+<span id="airpollution-views-aq-api-v1-module"></span><h2>airpollution.views.aq_api_v1 module<a class="headerlink" href="#module-airpollution.views.aq_api_v1" title="Permalink to this headline">¶</a></h2>
+<p>This module serves as an api for views and provides access to the application database.
+The functions in this module may return data from numerous backend datasources.
+This file will contain a series of Django routes.
+Each route in this module will require a corresponding urlpattern entry in urls.py
+These should return the dictionary values specified in</p>
+<blockquote>
+<div><p><a class="reference external" href="https://docs.google.com/document/d/1saez6QW-cXMATwMG6F1O0RkZuXX-6IjMcW3dxkWLHgo">https://docs.google.com/document/d/1saez6QW-cXMATwMG6F1O0RkZuXX-6IjMcW3dxkWLHgo</a>/edit#</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Responses</dt><dd><p>OK                  request was successful
+INVALID_REQUEST     request was malformed
+OUT_OF_BOUNDS_TIME  dates are outside of the supported time range for that request
+REQUEST_DENIED      did not complete the request
+UNKNOWN_ERROR       unknown error</p>
+</dd>
+</dl>
+<dl class="py function">
+<dt id="airpollution.views.aq_api_v1.annual">
+<code class="sig-prename descclassname">airpollution.views.aq_api_v1.</code><code class="sig-name descname">annual</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em>, <em class="sig-param"><span class="n">years</span><span class="p">:</span> <span class="n">list</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">countries</span><span class="p">:</span> <span class="n">list</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">pollutants</span><span class="p">:</span> <span class="n">list</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">verbosity</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">0</span></em><span class="sig-paren">)</span> &#x2192; django.http.response.JsonResponse<a class="headerlink" href="#airpollution.views.aq_api_v1.annual" title="Permalink to this definition">¶</a></dt>
+<dd><p>/aq_api/annual
+Provides pollutant levels in units of micro g/m3 by pollutant, country, and year.
+Note: This API method only provides annual data from [START DATE] through [END DATE]</p>
+<p>Provides pollutant levels in units of micro g/m3 by pollutant, country, and year.
+Example request:</p>
+<p>For all pollutants, all countries, all years:
+<a class="reference external" href="http://localhost:8000/aq_api/annual/?version=v1">http://localhost:8000/aq_api/annual/?version=v1</a></p>
+<p>For a set of countries, pollutants and/or years:
+<a class="reference external" href="http://localhost:8000/aq_api/annual?version=v1&amp;countries=de,fr,be&amp;years=2016,2017,2018&amp;pollutants=o3,co">http://localhost:8000/aq_api/annual?version=v1&amp;countries=de,fr,be&amp;years=2016,2017,2018&amp;pollutants=o3,co</a>
+:param request:
+:return:</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="airpollution.views.aq_api_v1.daily">
+<code class="sig-prename descclassname">airpollution.views.aq_api_v1.</code><code class="sig-name descname">daily</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em><span class="sig-paren">)</span> &#x2192; django.http.response.JsonResponse<a class="headerlink" href="#airpollution.views.aq_api_v1.daily" title="Permalink to this definition">¶</a></dt>
+<dd><p>/aq_api/daily
+Provides pollutant levels in units of micro g/m3 by region, pollutant, and date.
+Example request (not limited data in development envorinment):
+<a class="reference external" href="http://localhost:8000/aq_api/daily?version=v1&amp;regions=de,fr,be&amp;pollutants=no,o3,co&amp;start-date=2020-01-01&amp;end-date=2020-03-19">http://localhost:8000/aq_api/daily?version=v1&amp;regions=de,fr,be&amp;pollutants=no,o3,co&amp;start-date=2020-01-01&amp;end-date=2020-03-19</a></p>
+<p>Example to get all data available (gets all data in a development environment - will be large for production):
+<a class="reference external" href="http://localhost:8000/aq_api/daily?version=v1&amp;start-date=2020-01-01&amp;end-date=2020-12-31">http://localhost:8000/aq_api/daily?version=v1&amp;start-date=2020-01-01&amp;end-date=2020-12-31</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>request</strong> – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Dictionary.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="airpollution.views.aq_api_v1.get_daily_data">
+<code class="sig-prename descclassname">airpollution.views.aq_api_v1.</code><code class="sig-name descname">get_daily_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">countries</span></em>, <em class="sig-param"><span class="n">pollutants</span></em>, <em class="sig-param"><span class="n">start_date</span></em>, <em class="sig-param"><span class="n">end_date</span></em>, <em class="sig-param"><span class="n">verbosity</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.views.aq_api_v1.get_daily_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="airpollution.views.aq_api_v1.get_region_boundaries_data">
+<code class="sig-prename descclassname">airpollution.views.aq_api_v1.</code><code class="sig-name descname">get_region_boundaries_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">level</span></em>, <em class="sig-param"><span class="n">regions</span></em>, <em class="sig-param"><span class="n">year</span><span class="o">=</span><span class="default_value">2016</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.views.aq_api_v1.get_region_boundaries_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="airpollution.views.aq_api_v1.get_region_info_data">
+<code class="sig-prename descclassname">airpollution.views.aq_api_v1.</code><code class="sig-name descname">get_region_info_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">level</span></em>, <em class="sig-param"><span class="n">year</span><span class="o">=</span><span class="default_value">2016</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.views.aq_api_v1.get_region_info_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="airpollution.views.aq_api_v1.get_target_bubblemap_data">
+<code class="sig-prename descclassname">airpollution.views.aq_api_v1.</code><code class="sig-name descname">get_target_bubblemap_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">start_date</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">end_date</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">pollutants</span><span class="p">:</span> <span class="n">list</span> <span class="o">=</span> <span class="default_value">'PM25', 'PM10', 'NO2'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.views.aq_api_v1.get_target_bubblemap_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="airpollution.views.aq_api_v1.get_target_data">
+<code class="sig-prename descclassname">airpollution.views.aq_api_v1.</code><code class="sig-name descname">get_target_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">years</span></em>, <em class="sig-param"><span class="n">regions</span></em>, <em class="sig-param"><span class="n">pollutants</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.views.aq_api_v1.get_target_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="airpollution.views.aq_api_v1.region_boundaries">
+<code class="sig-prename descclassname">airpollution.views.aq_api_v1.</code><code class="sig-name descname">region_boundaries</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em><span class="sig-paren">)</span> &#x2192; django.http.response.JsonResponse<a class="headerlink" href="#airpollution.views.aq_api_v1.region_boundaries" title="Permalink to this definition">¶</a></dt>
+<dd><p>/aq_api/region-boundaries
+Returns NUTS region boundaries.
+:param level: Level for which to return boundaries for.  If None, all are returned.
+:param regions: List of countries for which to return boundaries for.  In None, all EU countries are returned.
+:param year: Year of the EU NUTS region version.
+:return: A dictionary with the boundaries.</p>
+<p>Provides a list bounding shapes for NUTS regions.</p>
+<p>Example request:
+For all regions:
+<a class="reference external" href="http://localhost:8000/aq_api/region_boundaries?version=v1">http://localhost:8000/aq_api/region_boundaries?version=v1</a></p>
+<p>For a set of regions
+<a class="reference external" href="http://localhost:8000/aq_api/region_boundaries?version=v1&amp;regions=DE,FR">http://localhost:8000/aq_api/region_boundaries?version=v1&amp;regions=DE,FR</a>
+:param request:
+:return:</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="airpollution.views.aq_api_v1.region_info">
+<code class="sig-prename descclassname">airpollution.views.aq_api_v1.</code><code class="sig-name descname">region_info</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em><span class="sig-paren">)</span> &#x2192; django.http.response.JsonResponse<a class="headerlink" href="#airpollution.views.aq_api_v1.region_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>/aq_api/region-info
+Provides a list of NUTS regions and associated information.
+Returns a dictionary of NUTS regional details based on nuts_level provided.
+If nuts_level is None, all nuts levels are returned.
+:param request: Django request
+:param nuts_level: NUTS Level. Optional. If None, all levels are returned.
+:param year: Year of the version.  Optional. Current Nuts version is defaulted.
+:return: A JSON object with the nuts regions per level.
+Example request:</p>
+<p>For all regions:
+<a class="reference external" href="http://localhost:8000/aq_api/region_info?version=v1">http://localhost:8000/aq_api/region_info?version=v1</a></p>
+<p>For a given level:
+<a class="reference external" href="http://localhost:8000/aq_api/region_info?version=v1&amp;levels=0">http://localhost:8000/aq_api/region_info?version=v1&amp;levels=0</a>
+<a class="reference external" href="http://localhost:8000/aq_api/region_info?version=v1&amp;levels=1">http://localhost:8000/aq_api/region_info?version=v1&amp;levels=1</a>
+:param request:
+:return:</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="airpollution.views.aq_api_v1.sectors">
+<code class="sig-prename descclassname">airpollution.views.aq_api_v1.</code><code class="sig-name descname">sectors</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em><span class="sig-paren">)</span> &#x2192; django.http.response.JsonResponse<a class="headerlink" href="#airpollution.views.aq_api_v1.sectors" title="Permalink to this definition">¶</a></dt>
+<dd><p>/aq_api/sectors
+Provides emissions data by sector, pollutant, country, and year.
+Note: This API works for dates 1990 through 2017</p>
+<p>Example requests:
+For all pollutants, all countries, all sectors, and all years:</p>
+<blockquote>
+<div><p><a class="reference external" href="http://localhost:8000/aq_api/sectors/?version=v1">http://localhost:8000/aq_api/sectors/?version=v1</a></p>
+</div></blockquote>
+<dl class="simple">
+<dt>For a set of pollutants, countries, sectors, and/or years:</dt><dd><p><a class="reference external" href="http://localhost:8000/aq_api/sectors/">http://localhost:8000/aq_api/sectors/</a>?
+version=v1&amp;
+countries=de,fr,be&amp;
+years=2016,2017,2018&amp;
+pollutants=o3,co&amp;
+sectors=oil-gas-production          using dashes in the request won’t work because some of the sectors have a dash in the data</p>
+</dd>
+<dt>Working examples</dt><dd><p><a class="reference external" href="http://localhost:8000/aq_api/sectors?version=v1&amp;countries=FR&amp;years=2016,2017,2018&amp;pollutants=CO">http://localhost:8000/aq_api/sectors?version=v1&amp;countries=FR&amp;years=2016,2017,2018&amp;pollutants=CO</a>
+<a class="reference external" href="http://localhost:8000/aq_api/sectors?version=v1&amp;countries=FR&amp;years=2016,2017,2018&amp;pollutants=PM2.5">http://localhost:8000/aq_api/sectors?version=v1&amp;countries=FR&amp;years=2016,2017,2018&amp;pollutants=PM2.5</a>
+<a class="reference external" href="http://localhost:8000/aq_api/sectors?version=v1&amp;pollutants=PM2.5&amp;sectors=Agriculture">http://localhost:8000/aq_api/sectors?version=v1&amp;pollutants=PM2.5&amp;sectors=Agriculture</a>
+<a class="reference external" href="http://localhost:8000/aq_api/sectors?version=v1&amp;pollutants=PM2.5&amp;sectors=Road_transport">http://localhost:8000/aq_api/sectors?version=v1&amp;pollutants=PM2.5&amp;sectors=Road_transport</a>
+<a class="reference external" href="http://localhost:8000/aq_api/sectors?version=v1&amp;pollutants=PM2.5&amp;sectors=Non-road_transport">http://localhost:8000/aq_api/sectors?version=v1&amp;pollutants=PM2.5&amp;sectors=Non-road_transport</a>
+<a class="reference external" href="http://localhost:8000/aq_api/sectors?version=v1&amp;sectors=Industrial_processes_and_product_use">http://localhost:8000/aq_api/sectors?version=v1&amp;sectors=Industrial_processes_and_product_use</a>
+<a class="reference external" href="http://localhost:8000/aq_api/sectors?version=v1&amp;sectors=Commercial,_institutional_and_households">http://localhost:8000/aq_api/sectors?version=v1&amp;sectors=Commercial,_institutional_and_households</a>
+<a class="reference external" href="http://localhost:8000/aq_api/sectors?version=v1&amp;sectors=Energy_production_and_distribution">http://localhost:8000/aq_api/sectors?version=v1&amp;sectors=Energy_production_and_distribution</a>
+<a class="reference external" href="http://localhost:8000/aq_api/sectors?version=v1&amp;countries=DK&amp;sectors=Energy_production_and_distribution">http://localhost:8000/aq_api/sectors?version=v1&amp;countries=DK&amp;sectors=Energy_production_and_distribution</a></p>
+</dd>
+</dl>
+<p>Currently multiple couuntries or pollutants doesn’t work
+:param request:
+:return:</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="airpollution.views.aq_api_v1.targets">
+<code class="sig-prename descclassname">airpollution.views.aq_api_v1.</code><code class="sig-name descname">targets</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em><span class="sig-paren">)</span> &#x2192; django.http.response.JsonResponse<a class="headerlink" href="#airpollution.views.aq_api_v1.targets" title="Permalink to this definition">¶</a></dt>
+<dd><p>/aq_api/targets
+Provides a list of target emission levels by region, pollutant type, and year.
+Example request:</p>
+<p>For all pollutants, all regions, all years:
+<a class="reference external" href="http://localhost:8000/aq_api/targets?version=v1">http://localhost:8000/aq_api/targets?version=v1</a></p>
+<p>For a set of regions, pollutants and/or years:
+<a class="reference external" href="http://localhost:8000/aq_api/targets?version=v1&amp;regions=de,fr,be&amp;years=2016,2017,2018&amp;pollutants=o3,co">http://localhost:8000/aq_api/targets?version=v1&amp;regions=de,fr,be&amp;years=2016,2017,2018&amp;pollutants=o3,co</a>
+:param request:
+:return:</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-airpollution.views.copernicus_views">
+<span id="airpollution-views-copernicus-views-module"></span><h2>airpollution.views.copernicus_views module<a class="headerlink" href="#module-airpollution.views.copernicus_views" title="Permalink to this headline">¶</a></h2>
+<p>Author: Mark McDonald
+Views specific to the copernicus data</p>
+<dl class="py function">
+<dt id="airpollution.views.copernicus_views.get_sat_image">
+<code class="sig-prename descclassname">airpollution.views.copernicus_views.</code><code class="sig-name descname">get_sat_image</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em>, <em class="sig-param"><span class="n">pollutant</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">year</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">month</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">day</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">category</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">'ANALYSIS'</span></em>, <em class="sig-param"><span class="n">hour</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">12</span></em>, <em class="sig-param"><span class="n">level</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.views.copernicus_views.get_sat_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>Render a satellite image HTML page.
+:param request: Django request
+:param pollutant: The pollutant key code
+:param year: Year of image
+:param month: Month of image
+:param day: Day of image
+:param category: ANALYSIS or FORECAST
+:param hour: Hour of image
+:param level: Altitude of image
+:return: Rendered HTML page with image</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-airpollution.views.daily_aq_map">
+<span id="airpollution-views-daily-aq-map-module"></span><h2>airpollution.views.daily_aq_map module<a class="headerlink" href="#module-airpollution.views.daily_aq_map" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="airpollution.views.daily_aq_map.draw_map">
+<code class="sig-prename descclassname">airpollution.views.daily_aq_map.</code><code class="sig-name descname">draw_map</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.views.daily_aq_map.draw_map" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a rendered map with a script and div object.
+:param request: Django request
+:param nuts_level: The nuts level for which to display the map
+:param countries: The country code of the regions to be mapped (eg: de, nl, fr)
+:param pollutants: The pollutants to be mapped (eg: o3, co)
+:param start_date: The start_date to be mapped (eg: o3, co)
+:return: Returns a rendered map with a script and div object.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-airpollution.views.eea_station_views">
+<span id="airpollution-views-eea-station-views-module"></span><h2>airpollution.views.eea_station_views module<a class="headerlink" href="#module-airpollution.views.eea_station_views" title="Permalink to this headline">¶</a></h2>
+<p>Author: Mark McDonald
+This module is intended to gather information on the EEA
+pollution reporting stations.</p>
+<dl class="py function">
+<dt id="airpollution.views.eea_station_views.get_pollution_observations">
+<code class="sig-prename descclassname">airpollution.views.eea_station_views.</code><code class="sig-name descname">get_pollution_observations</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">start_date</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">end_date</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">time_type</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">country_code</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">nuts_region</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">station_code</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">pollutant</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; django.http.response.JsonResponse<a class="headerlink" href="#airpollution.views.eea_station_views.get_pollution_observations" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return surface pollution readings from base stations.
+:param station_code:
+:param start_date: YYYYMMDD. Start date of the observations to return.
+:param end_date: YYYYMMDD. End date of the observations. (inclusive)
+:param time_type: ‘hourly’ | ‘day_mean’ | ‘rolling’.</p>
+<blockquote>
+<div><p>‘hourly’ - all available hours for the day
+‘day_mean’ - a mean value for all available and valid hours for each day
+‘rolling’ - An 8-hour rolling mean for the day. Each hour value provided is the mean of that hour and the previous 7.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>country_code</strong> – Optional.  2-digit country code.  If country_code and nuts_region are supplied, the nuts_region will take precidence.</p></li>
+<li><p><strong>nuts_region</strong> – Optional. Nuts region.  All regions are supported. If country_code is also supplied, the NUTS region will take precidence.</p></li>
+<li><p><strong>pollutant</strong> – Optional. pollutant code of pollutant.  If none, all are returned.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>JSON dictionary of the results.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="airpollution.views.eea_station_views.get_stations">
+<code class="sig-prename descclassname">airpollution.views.eea_station_views.</code><code class="sig-name descname">get_stations</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em>, <em class="sig-param"><span class="n">station_name</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; django.http.response.JsonResponse<a class="headerlink" href="#airpollution.views.eea_station_views.get_stations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-airpollution.views.emissions_trend_table_view">
+<span id="airpollution-views-emissions-trend-table-view-module"></span><h2>airpollution.views.emissions_trend_table_view module<a class="headerlink" href="#module-airpollution.views.emissions_trend_table_view" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="airpollution.views.emissions_trend_table_view.draw_plot">
+<code class="sig-prename descclassname">airpollution.views.emissions_trend_table_view.</code><code class="sig-name descname">draw_plot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em><span class="sig-paren">)</span> &#x2192; django.http.response.JsonResponse<a class="headerlink" href="#airpollution.views.emissions_trend_table_view.draw_plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draws a table with emissions by year by country for most recent 5 years available.
+:param request:
+:return: JsonResponse</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-airpollution.views.nuts_maps_views">
+<span id="airpollution-views-nuts-maps-views-module"></span><h2>airpollution.views.nuts_maps_views module<a class="headerlink" href="#module-airpollution.views.nuts_maps_views" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="airpollution.views.nuts_maps_views.MapData">
+<em class="property">class </em><code class="sig-prename descclassname">airpollution.views.nuts_maps_views.</code><code class="sig-name descname">MapData</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">crs</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">4326</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.views.nuts_maps_views.MapData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt id="airpollution.views.nuts_maps_views.MapData.get_bokeh_figure">
+<code class="sig-name descname">get_bokeh_figure</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">height</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">width</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">include_tools</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.views.nuts_maps_views.MapData.get_bokeh_figure" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a Bokeh figure with specified height and width
+:param include_tools:
+:param tools: Tools to include in the figure (_get_bokeh_tools())
+:param height: Height of the figure
+:param width: Width of the figure
+:return: Bokeh figure object</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="airpollution.views.nuts_maps_views.MapData.get_bokeh_tools">
+<em class="property">static </em><code class="sig-name descname">get_bokeh_tools</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; list<a class="headerlink" href="#airpollution.views.nuts_maps_views.MapData.get_bokeh_tools" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the default tools for Bokeh maps
+:return: list of tools to be displayed with map</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="airpollution.views.nuts_maps_views.MapData.get_color_mapper">
+<code class="sig-name descname">get_color_mapper</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; bokeh.models.mappers.CategoricalColorMapper<a class="headerlink" href="#airpollution.views.nuts_maps_views.MapData.get_color_mapper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a Categorial color mapper that will map a color to specified nuts region level.
+:return: Categorical color mapper</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="airpollution.views.nuts_maps_views.MapData.get_geosource">
+<em class="property">static </em><code class="sig-name descname">get_geosource</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span><span class="p">:</span> <span class="n">geopandas.geodataframe.GeoDataFrame</span></em><span class="sig-paren">)</span> &#x2192; bokeh.models.sources.GeoJSONDataSource<a class="headerlink" href="#airpollution.views.nuts_maps_views.MapData.get_geosource" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert dataframe to geojson. Define Bokeh datasource as GeoJson.
+:param df: dataframe to convert to geo source
+:return: GeoJSONDataSource</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="airpollution.views.nuts_maps_views.MapData.get_map_df">
+<code class="sig-name descname">get_map_df</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nuts_level</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span> &#x2192; geopandas.geodataframe.GeoDataFrame<a class="headerlink" href="#airpollution.views.nuts_maps_views.MapData.get_map_df" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="airpollution.views.nuts_maps_views.MapData.get_maps_script_and_div">
+<code class="sig-name descname">get_maps_script_and_div</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nuts_level</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">0</span></em>, <em class="sig-param"><span class="n">height</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">600</span></em>, <em class="sig-param"><span class="n">width</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">600</span></em>, <em class="sig-param"><span class="n">include_tools</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.views.nuts_maps_views.MapData.get_maps_script_and_div" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="airpollution.views.nuts_maps_views.draw_bubble_map">
+<code class="sig-prename descclassname">airpollution.views.nuts_maps_views.</code><code class="sig-name descname">draw_bubble_map</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em>, <em class="sig-param"><span class="n">start_date</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">end_date</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">pollutants</span><span class="p">:</span> <span class="n">list</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.views.nuts_maps_views.draw_bubble_map" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="airpollution.views.nuts_maps_views.get_nuts_map">
+<code class="sig-prename descclassname">airpollution.views.nuts_maps_views.</code><code class="sig-name descname">get_nuts_map</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nuts_level</span></em>, <em class="sig-param"><span class="n">height</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">600</span></em>, <em class="sig-param"><span class="n">width</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">600</span></em>, <em class="sig-param"><span class="n">outline_map</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">include_tools</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">exclude_countries</span><span class="p">:</span> <span class="n">list</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.views.nuts_maps_views.get_nuts_map" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a rendered map with a script and div object.
+:param include_tools:
+:param outline_map:
+:param height:
+:param width:
+:param request: Django request
+:param nuts_level: The nuts level for which to display the map
+:return: Returns a rendered map with a script and div object.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="airpollution.views.nuts_maps_views.get_nuts_map_data">
+<code class="sig-prename descclassname">airpollution.views.nuts_maps_views.</code><code class="sig-name descname">get_nuts_map_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.views.nuts_maps_views.get_nuts_map_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="airpollution.views.nuts_maps_views.get_nuts_map_view">
+<code class="sig-prename descclassname">airpollution.views.nuts_maps_views.</code><code class="sig-name descname">get_nuts_map_view</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em>, <em class="sig-param"><span class="n">nuts_level</span></em>, <em class="sig-param"><span class="n">height</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">600</span></em>, <em class="sig-param"><span class="n">width</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">600</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.views.nuts_maps_views.get_nuts_map_view" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-airpollution.views.pollution_attainment_by_year_table_view">
+<span id="airpollution-views-pollution-attainment-by-year-table-view-module"></span><h2>airpollution.views.pollution_attainment_by_year_table_view module<a class="headerlink" href="#module-airpollution.views.pollution_attainment_by_year_table_view" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="airpollution.views.pollution_attainment_by_year_table_view.draw_plot">
+<code class="sig-prename descclassname">airpollution.views.pollution_attainment_by_year_table_view.</code><code class="sig-name descname">draw_plot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em>, <em class="sig-param"><span class="n">years</span><span class="p">:</span> <span class="n">list</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">countries</span><span class="p">:</span> <span class="n">list</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">pollutants</span><span class="p">:</span> <span class="n">list</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">verbosity</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.views.pollution_attainment_by_year_table_view.draw_plot" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-airpollution.views.pollution_deltas_table_view">
+<span id="airpollution-views-pollution-deltas-table-view-module"></span><h2>airpollution.views.pollution_deltas_table_view module<a class="headerlink" href="#module-airpollution.views.pollution_deltas_table_view" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="airpollution.views.pollution_deltas_table_view.draw_plot">
+<code class="sig-prename descclassname">airpollution.views.pollution_deltas_table_view.</code><code class="sig-name descname">draw_plot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.views.pollution_deltas_table_view.draw_plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a rendered map with a script and div object.
+:param request: Django request
+:param nuts_level: The nuts level for which to display the map
+:param countries: The country code of the regions to be plotted (eg: de, nl, fr)
+:param pollutant: The pollutant to be plotted (eg: o3, co)
+:param start_date: The start_date to be plotted (eg: 2020-02-29)
+:param end_date: The end_date to be plotted (eg: 2020-02-29)
+:return: Returns a rendered map with a script and div object.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-airpollution.views.pollution_over_time_view">
+<span id="airpollution-views-pollution-over-time-view-module"></span><h2>airpollution.views.pollution_over_time_view module<a class="headerlink" href="#module-airpollution.views.pollution_over_time_view" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="airpollution.views.pollution_over_time_view.draw_plot">
+<code class="sig-prename descclassname">airpollution.views.pollution_over_time_view.</code><code class="sig-name descname">draw_plot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.views.pollution_over_time_view.draw_plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a rendered map with a script and div object.
+:param request: Django request
+:param nuts_level: The nuts level for which to display the map
+:param countries: The country code of the regions to be plotted (eg: de, nl, fr)
+:param pollutant: The pollutant to be plotted (eg: o3, co)
+:param start_date: The start_date to be plotted (eg: 2020-02-29)
+:param end_date: The end_date to be plotted (eg: 2020-02-29)
+:return: Returns a rendered map with a script and div object.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-airpollution.views.pollution_regional_deltas_table_view">
+<span id="airpollution-views-pollution-regional-deltas-table-view-module"></span><h2>airpollution.views.pollution_regional_deltas_table_view module<a class="headerlink" href="#module-airpollution.views.pollution_regional_deltas_table_view" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="airpollution.views.pollution_regional_deltas_table_view.draw_plot">
+<code class="sig-prename descclassname">airpollution.views.pollution_regional_deltas_table_view.</code><code class="sig-name descname">draw_plot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.views.pollution_regional_deltas_table_view.draw_plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a rendered map with a script and div object.
+:param request: Django request
+:param nuts_level: The nuts level for which to display the map
+:param countries: The country code of the regions to be plotted (eg: de, nl, fr)
+:param pollutant: The pollutant to be plotted (eg: o3, co)
+:param start_date: The start_date to be plotted (eg: 2020-02-29)
+:param end_date: The end_date to be plotted (eg: 2020-02-29)
+:return: Returns a rendered map with a script and div object.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-airpollution.views.sector_aq_plot">
+<span id="airpollution-views-sector-aq-plot-module"></span><h2>airpollution.views.sector_aq_plot module<a class="headerlink" href="#module-airpollution.views.sector_aq_plot" title="Permalink to this headline">¶</a></h2>
+<p>Author: Hemant Bajpai
+Creates bokeh div element for EEA data source.</p>
+<dl class="py function">
+<dt id="airpollution.views.sector_aq_plot.draw_emission_distribution_plot">
+<code class="sig-prename descclassname">airpollution.views.sector_aq_plot.</code><code class="sig-name descname">draw_emission_distribution_plot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.views.sector_aq_plot.draw_emission_distribution_plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a rendered yearly emission distribution plot with a script and div object.
+:param request: Django request
+:param pollutant: The pollutant name
+:return: Returns a rendered map with a script and div object.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="airpollution.views.sector_aq_plot.draw_plot">
+<code class="sig-prename descclassname">airpollution.views.sector_aq_plot.</code><code class="sig-name descname">draw_plot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.views.sector_aq_plot.draw_plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a rendered plot with a script and div object.
+:param request: Django request
+:param country: The country code of the regions to be mapped (eg: de, nl, fr)
+:return: Returns a rendered map with a script and div object.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="airpollution.views.sector_aq_plot.draw_yearly_emission_plot">
+<code class="sig-prename descclassname">airpollution.views.sector_aq_plot.</code><code class="sig-name descname">draw_yearly_emission_plot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.views.sector_aq_plot.draw_yearly_emission_plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a rendered yearly emissions plot with a script and div object.
+:param request: Django request
+:param country: The country code of the regions to be mapped (eg: de, nl, fr)
+:return: Returns a rendered map with a script and div object.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-airpollution.views.target_heatmap_view">
+<span id="airpollution-views-target-heatmap-view-module"></span><h2>airpollution.views.target_heatmap_view module<a class="headerlink" href="#module-airpollution.views.target_heatmap_view" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="airpollution.views.target_heatmap_view.draw_heatmap">
+<code class="sig-prename descclassname">airpollution.views.target_heatmap_view.</code><code class="sig-name descname">draw_heatmap</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em>, <em class="sig-param"><span class="n">plot_date</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">pollutants</span><span class="p">:</span> <span class="n">list</span> <span class="o">=</span> <span class="default_value">['PM25', 'PM10', 'NO2']</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.views.target_heatmap_view.draw_heatmap" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>request</strong> – </p></li>
+<li><p><strong>plot_date</strong> – </p></li>
+<li><p><strong>pollutants</strong> – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="airpollution.views.target_heatmap_view.get_bounds">
+<code class="sig-prename descclassname">airpollution.views.target_heatmap_view.</code><code class="sig-name descname">get_bounds</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">bottom_left_latlon</span><span class="p">:</span> <span class="n">tuple</span> <span class="o">=</span> <span class="default_value">- 24.95, 30.05</span></em>, <em class="sig-param"><span class="n">top_right_latlon</span><span class="p">:</span> <span class="n">tuple</span> <span class="o">=</span> <span class="default_value">44.95, 69.95</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.views.target_heatmap_view.get_bounds" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-airpollution.views.views">
+<span id="airpollution-views-views-module"></span><h2>airpollution.views.views module<a class="headerlink" href="#module-airpollution.views.views" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="airpollution.views.views.add_chart_to_persona">
+<code class="sig-prename descclassname">airpollution.views.views.</code><code class="sig-name descname">add_chart_to_persona</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.views.views.add_chart_to_persona" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="airpollution.views.views.add_persona">
+<code class="sig-prename descclassname">airpollution.views.views.</code><code class="sig-name descname">add_persona</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.views.views.add_persona" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="airpollution.views.views.add_user">
+<code class="sig-prename descclassname">airpollution.views.views.</code><code class="sig-name descname">add_user</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.views.views.add_user" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="airpollution.views.views.admin_persona_view">
+<code class="sig-prename descclassname">airpollution.views.views.</code><code class="sig-name descname">admin_persona_view</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.views.views.admin_persona_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>Admin Persona dashboard route
+:param request:
+:return:</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="airpollution.views.views.admin_view">
+<code class="sig-prename descclassname">airpollution.views.views.</code><code class="sig-name descname">admin_view</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.views.views.admin_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>Admin dashboard route
+:param request:
+:return:</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="airpollution.views.views.change_user_persona">
+<code class="sig-prename descclassname">airpollution.views.views.</code><code class="sig-name descname">change_user_persona</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em>, <em class="sig-param"><span class="n">user_id</span></em>, <em class="sig-param"><span class="n">group_id</span></em>, <em class="sig-param"><span class="n">context_url</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.views.views.change_user_persona" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="airpollution.views.views.dashboard_view">
+<code class="sig-prename descclassname">airpollution.views.views.</code><code class="sig-name descname">dashboard_view</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.views.views.dashboard_view" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="airpollution.views.views.delete_chart_from_persona">
+<code class="sig-prename descclassname">airpollution.views.views.</code><code class="sig-name descname">delete_chart_from_persona</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em>, <em class="sig-param"><span class="n">group_id</span></em>, <em class="sig-param"><span class="n">chart_id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.views.views.delete_chart_from_persona" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="airpollution.views.views.delete_persona">
+<code class="sig-prename descclassname">airpollution.views.views.</code><code class="sig-name descname">delete_persona</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em>, <em class="sig-param"><span class="n">persona_id</span></em>, <em class="sig-param"><span class="n">context_url</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.views.views.delete_persona" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="airpollution.views.views.delete_user">
+<code class="sig-prename descclassname">airpollution.views.views.</code><code class="sig-name descname">delete_user</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em>, <em class="sig-param"><span class="n">user_id</span></em>, <em class="sig-param"><span class="n">context_url</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.views.views.delete_user" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="airpollution.views.views.emissions_trend_table_view">
+<code class="sig-prename descclassname">airpollution.views.views.</code><code class="sig-name descname">emissions_trend_table_view</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.views.views.emissions_trend_table_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>Emissions trend table view
+:param request:
+:return:</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="airpollution.views.views.goals_view">
+<code class="sig-prename descclassname">airpollution.views.views.</code><code class="sig-name descname">goals_view</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.views.views.goals_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>Goals dashboard route
+:param request:
+:return:</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="airpollution.views.views.index_view">
+<code class="sig-prename descclassname">airpollution.views.views.</code><code class="sig-name descname">index_view</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.views.views.index_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>Default Index route which shows the initial page
+:param request:
+:return:</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="airpollution.views.views.login_view">
+<code class="sig-prename descclassname">airpollution.views.views.</code><code class="sig-name descname">login_view</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.views.views.login_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>Populates login view of the application
+:param request:
+:return:</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="airpollution.views.views.logout_view">
+<code class="sig-prename descclassname">airpollution.views.views.</code><code class="sig-name descname">logout_view</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.views.views.logout_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>Populates logout view of the application
+:param request:
+:return:</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="airpollution.views.views.pollution_attainment_table_view">
+<code class="sig-prename descclassname">airpollution.views.views.</code><code class="sig-name descname">pollution_attainment_table_view</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.views.views.pollution_attainment_table_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pollution attainment table
+:param request:
+:return:</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="airpollution.views.views.pollution_deltas_regional_table_view">
+<code class="sig-prename descclassname">airpollution.views.views.</code><code class="sig-name descname">pollution_deltas_regional_table_view</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.views.views.pollution_deltas_regional_table_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>Times Series dashboard route
+:param request:
+:return:</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="airpollution.views.views.pollution_deltas_table_view">
+<code class="sig-prename descclassname">airpollution.views.views.</code><code class="sig-name descname">pollution_deltas_table_view</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.views.views.pollution_deltas_table_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>Times Series dashboard route
+:param request:
+:return:</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="airpollution.views.views.pollution_over_time_view">
+<code class="sig-prename descclassname">airpollution.views.views.</code><code class="sig-name descname">pollution_over_time_view</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.views.views.pollution_over_time_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>Times Series dashboard route
+:param request:
+:return:</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="airpollution.views.views.regional_view">
+<code class="sig-prename descclassname">airpollution.views.views.</code><code class="sig-name descname">regional_view</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.views.views.regional_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>Regional dashboard route
+:param request:
+:return:</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="airpollution.views.views.sectors_view">
+<code class="sig-prename descclassname">airpollution.views.views.</code><code class="sig-name descname">sectors_view</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.views.views.sectors_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sectors dashboard route
+:param request:
+:return:</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="airpollution.views.views.target_bubblemap_view">
+<code class="sig-prename descclassname">airpollution.views.views.</code><code class="sig-name descname">target_bubblemap_view</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.views.views.target_bubblemap_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bubble map targets view
+:param request:
+:return:</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="airpollution.views.views.target_heatmap_view">
+<code class="sig-prename descclassname">airpollution.views.views.</code><code class="sig-name descname">target_heatmap_view</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.views.views.target_heatmap_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>Heatmap targets view
+:param request:
+:return:</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="airpollution.views.views.trends_view">
+<code class="sig-prename descclassname">airpollution.views.views.</code><code class="sig-name descname">trends_view</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.views.views.trends_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>Trends dashboard route
+:param request:
+:return:</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="airpollution.views.views.user_persona_view">
+<code class="sig-prename descclassname">airpollution.views.views.</code><code class="sig-name descname">user_persona_view</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.views.views.user_persona_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>Admin Persona dashboard route
+:param request:
+:return:</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="airpollution.views.views.view_group">
+<code class="sig-prename descclassname">airpollution.views.views.</code><code class="sig-name descname">view_group</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em>, <em class="sig-param"><span class="n">group_id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#airpollution.views.views.view_group" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-airpollution.views">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-airpollution.views" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="dataingestor.html" class="btn btn-neutral float-right" title="dataingestor package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="airpollution.tests.html" class="btn btn-neutral float-left" title="airpollution.tests package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Alan Martinson, Carly Gloge, Hemant Bajpai, Mark McDonald, Pritam K Dey, Taylor Meyer
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

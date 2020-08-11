@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <title>EU Green Deal</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="{% static 'airpollution/assets/img/favicon.png' %}"/>
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'airpollution/login/vendor/bootstrap/css/bootstrap.min.css' %}"/>
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'airpollution/login/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}"/>
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'airpollution/login/fonts/iconic/css/material-design-iconic-font.min.css' %}"/>
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'airpollution/login/vendor/animate/animate.css' %}"/>
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'airpollution/login/vendor/css-hamburgers/hamburgers.min.css' %}"/>
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'airpollution/login/vendor/animsition/css/animsition.min.css' %}"/>
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'airpollution/login/vendor/select2/select2.min.css' %}"/>
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'airpollution/login/vendor/daterangepicker/daterangepicker.css' %}"/>
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'airpollution/login/css/util.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'airpollution/login/css/main.css' %}"/>
+    <!--===============================================================================================-->
+    <style type="text/css">
+      @font-face {
+        font-family: 'Montserrat';
+        src: url('{% static 'airpollution/login/css/montserrat-bold.ttf' %}') format('woff'),
+         url('{% static 'airpollution/assets/css/montserrat-bold.ttf' %}') format('truetype');
+      } 
+        label{
+            color: #CCC;
+            font-size: 12px;
+        }
+        .copyright-label{
+          color: #5ab259;
+        }
+
+  *{margin: 0;padding: 0;}
+  body{font-family: 'Montserrat';background-color: #fff;-webkit-font-smoothing: antialiased;}
+  #nav-bar{position: sticky;top: 0;z-index: 10;}
+  .navbar{background: linear-gradient(to right, #fff,#fff);padding-bottom:  10px !important;}
+  /* Logo resize */
+  .navbar-brand img{height: 4rem;padding-left: 1rem;}
+  .navbar-nav{margin-right: 0rem;}
+  .navbar-nav li{padding-right:  0rem;}
+  .navbar-nav li{padding-left: 60rem;}
+  .navbar-nav .nav-item .nav-link{color: rgb(94, 223, 82) !important;
+    font-weight: 600; float: right; text-align: right;  padding-left: 150px;   
+    border: 1px solid #eee;padding: 50px; 
+  }
+  .navbar-nav .nav-item .nav-link:hover{color:#000!important;}
+  .fa-bars{color: #fff !important; font-size: 25px !important;}
+  .navbar-toggler{outline:  #fff !important;}
+  /* --------- Banner ---------- */
+  .banner{
+    background-image: linear-gradient(to right, #53E094, #64C879);
+    color: #fff; padding-top: 5%;}
+  .promo-title{
+    line-height:60px;
+    margin-top: 1em; 
+    margin-bottom: 5em;
+    margin-left: 2em;
+    color: #FFFF;
+    font-family: 'Montserrat';
+    font-size: 42px;
+  }
+  .join-title{font-size: 1.44rem;}
+  .link-play{text-decoration: none;}
+  .link-play:hover{color: #58f0ff;text-decoration: none!important;}
+  .play-btn{width: 45px;margin: 20px 0;margin-right: 2em;text-decoration: none !important;transition: transform 1.2s;}
+  .play-btn:hover{color: #fff;text-decoration: none!important;transform: scale(1.2);}
+  .banner a{color: #fff; text-decoration: none!important;}
+  .img-fluid{margin-top: 4rem;}
+  .bottom-img{width: 100%; }
+  /* ---------- Services --------- */
+  #services{padding: 40px 0; }
+  .service-img{width: 180px; margin-top: 0rem;box-shadow: 1px 5px 8px 2px #B7F1D6;padding: 40px;}
+  .services{padding: 20px; align-content: center}
+  .services h4{padding: 1em; margin-top: 5px; text-transform: uppercase;font-weight: bolder;}
+  .title::after{align-items: center;
+    content: '';
+    background: linear-gradient(to right, #1723b1,#58f0ff);
+    height: 8px;
+    width: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border-radius: 70px;
+    transform: translateY(23px);}
+  #services .btn-primary{
+    box-shadow: none;
+    padding: 8px 25px;
+    border: none; border-radius: 20px;
+    background: linear-gradient(to right, #1723b1,#58f0ff);
+    transition: transform 1.2s;
+  }
+  #services .btn-primary:hover{transform: scale(1.2);}
+  /* -----------   About -------------*/
+  #about{background-color: #f8f9fa; padding-bottom: 3rem; padding-top: 3rem;}
+  .about-title{font-size: 1.6em; margin-top: 8%; font-weight: 600;}
+  #about ul li{margin: 10px 0;}
+  #about ul{margin-left: 20px;}
+  /* ------- Testimonials Section -----*/
+  #testimonials{margin: 100px 0;}
+  .testimonials{border-left: 3px solid #1723b1; margin: 50px 0;}
+  .testimonials img{height: 60px;width: 60px;border-radius: 50%; margin: 0 10px;}
+  .user-details{display: inline-block;font-size: 12px;}
+  .feedback{font-style: italic;}
+  /* ----- Footer ------*/
+  #footer{background: linear-gradient(to right, #E4FCEE,#E4FCEE); color: #fff;}
+  .footer-img{width: 100%;}
+  .footer-box{padding: 20px;}
+  .footer-box img{width: 4rem; margin-bottom: 20px;}
+  .footer-box .fa{
+    margin-right: 8px;
+    font-size: 25px;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    padding-top: 7px;
+    border-radius: 2px;
+    display: inline-block;
+  }
+  .footer-box .form-control{box-shadow: none !important; border: none; border-radius: 0; margin: 20px 0;}
+  .footer-box .btn-primary{
+    box-shadow: none !important;
+    width: 8rem;
+    border: none; border-radius: 50px;
+    background: linear-gradient(to right, #E4FCEE,#E4FCEE);
+    color: #fff;transition: transform 1.2s;
+  }
+  .footer-box .btn-primary:hover{transform: scale(1.2); color: #fff;}
+  /*-------- Social Media icons ---------- */
+  #social p{font-weight: 600; font-size: 16px; margin-top: 20px;}
+  #social .social-icons .svg-icons img{width: 23px;transition: transform .7s;margin-right: 1rem;}
+  #social .social-icons .svg-icons img:hover{transform: scale(1.2);}
+  .copyright{padding-top: 2%; font-size: 15px; text-align: center;color: #BBB;}
+  .copyright a{text-decoration: none;color: #CCCC; text-align: center;}
+  .colssset{color: #17b157}
+  /*--------- btn ------ */
+  .signup-form{padding-top: 3rem;  background-color: #fff;   ;
+  padding: 50px;
+  border-radius: 5px; ;}
+  #home .signup-form input {
+    border: 1px solid #eee;
+    height: 38px;
+    box-shadow: none !important; }
+  #home .signup-form input:focus {
+    border-color: #44c5ee; }
+  #home .signup-form .form-control {
+    font-size: 16px;
+    padding: 10px 15px;
+    color: #555;
+    width: 10px;
+    background-color: #fff;
+    border-radius: 3px; } 
+    .clz
+    {
+      color: #AAAA;
+      font-weight: bold;
+    }
+    input{
+      box-shadow: 1px 1px 1px 1px #EEEE;
+    }
+</style>
+</head>
+<body>
+
+
+    <!-- Navbar Menu  ---->
+    <div class="row" style="padding: 10px;">
+        <div class="col-md-4">
+            <div class="header-logo">
+                <img src="{% static 'airpollution/assets/img/green-deal-logo.png'%}" style="width: 240px;height:60px;margin-left: 200px;">
+            </div>
+        </div>
+        <div class="col-md-4"></div>
+
+        <div class="col-md-4">
+            <div class="login-button">
+              <a href="/login" style="border-radius: 1px;border: 2px solid #8FC5AD;padding: 10px 40px;color: #8FC5AD;font-size: 12px;font-weight: bolder;line-height:5">LOGIN</a>
+            </div>
+        </div>
+    </div>
+        <!--- Banner Hero section -->
+    <section class="banner">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <p class="promo-title">The Green Deal's Climate Change Report</p> 
+          </div>
+            <!-- Sign Up -->
+            <div class="col-md-4">
+              <form class="signup-form">
+                  <div class="form-group">
+                      <label class="clz">Your Email*</label>
+                      <input type="email"  class="form-control" size="20" required="required" autocomplete="off">
+                  </div>
+                  <div class="form-group">
+                    <label class="clz">Password*</label>
+                    <input type="password" class="form-control"  required="required" autocomplete="off">
+                </div>
+                  <div class="form-group text-center">
+                      <button type="submit" class="btn btn-blue btn-block" style="background-color: #71cc85; text-decoration-color: #fff; color: #fff;padding: 15px 15px;font-weight: bolder;">REQUEST ACCESS</button>
+                  </div>
+              </form>
+          </div>
+        </div>
+      </div>
+        <!--- Background wave Hero ---->
+        <img src="{% static 'airpollution/assets/img/Wave.png' %}" class="bottom-img" alt="">
+    </section>
+    <!--- Services ---->
+    <section id="services" >
+      <div class="container text-center" >
+          
+        <div class="row text-center" >
+          <div class="col-md-6 services">
+            <img src="{% static 'airpollution/assets/img/linechart.png' %}" class="service-img"   alt="">
+            <h4>Graphic Visualizations</h4>
+          </div>
+
+          <div class="col-md-6 services">
+            <img src="{% static 'airpollution/assets/img/cloudcomputing.png' %}" class="service-img" alt="">
+            <h4>Complex Data Inputs</h4>
+            
+          </div>
+        </div>
+
+        <div class="row text-center" >
+          <div class="col-md-6 services">
+            <img src="{% static 'airpollution/assets/img/europe.png' %}" class="service-img"   alt="">
+            <h4>Regional Reports</h4>
+            
+          </div>
+
+          <div class="col-md-6 services">
+          <img src="{% static 'airpollution/assets/img/trend.png' %}" class="service-img" alt="">
+            <h4>Trend Monitoring</h4>
+            
+          </div>
+       
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- Footer ------>
+    <section id="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <p class="copyright"> 2020 © <label class="copyright-label">Green Deal Report.</label> All rights reserved </a></p>
+            </div>
+
+          </div>
+          <br>
+        </div>
+    </section>
+
+<!--===============================================================================================-->
+<script type="text/javascript" src="{% static 'airpollution/login/vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+<!--===============================================================================================-->
+<script type="text/javascript" src="{% static 'airpollution/login/vendor/animsition/js/animsition.min.js' %}"></script>
+<!--===============================================================================================-->
+<script type="text/javascript" src="{% static 'airpollution/login/vendor/bootstrap/js/popper.js' %}"></script>
+<script type="text/javascript" src="{% static 'airpollution/login/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+<!--===============================================================================================-->
+<script type="text/javascript" src="{% static 'airpollution/login/vendor/select2/select2.min.js' %}"></script>
+<!--===============================================================================================-->
+<script type="text/javascript" src="{% static 'airpollution/login/vendor/daterangepicker/moment.js' %}"></script>
+<script type="text/javascript"
+        src="{% static 'airpollution/login/vendor/daterangepicker/daterangepicker.js' %}"></script>
+<!--===============================================================================================-->
+<script type="text/javascript" src="{% static 'airpollution/login/vendor/countdowntime/countdowntime.js' %}"></script>
+<!--===============================================================================================-->
+<script type="text/javascript" src="{% static 'airpollution/login/js/main.js' %}"></script>
+
+</body>
+</html>

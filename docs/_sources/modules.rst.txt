@@ -1,0 +1,10 @@
+eugreendeal
+===========
+
+.. toctree::
+   :maxdepth: 4
+
+   airpollution
+   dataingestor
+   eugreendeal
+   manage

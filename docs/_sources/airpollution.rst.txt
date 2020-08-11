@@ -1,0 +1,51 @@
+airpollution package
+====================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   airpollution.management
+   airpollution.migrations
+   airpollution.models
+   airpollution.static
+   airpollution.tests
+   airpollution.views
+
+Submodules
+----------
+
+airpollution.admin module
+-------------------------
+
+.. automodule:: airpollution.admin
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+airpollution.apps module
+------------------------
+
+.. automodule:: airpollution.apps
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+airpollution.urls module
+------------------------
+
+.. automodule:: airpollution.urls
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: airpollution
+   :members:
+   :undoc-members:
+   :show-inheritance:

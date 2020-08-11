@@ -1,0 +1,420 @@
+{% extends "airpollution/layout/corejs_script_layout.html" %}
+{% load static %}
+
+{% block jscript %}
+    {% csrf_token %}
+    <script type="text/javascript">
+
+        document.addEventListener('DOMContentLoaded', () => {
+            var filters = {
+                'countries': 'EU28',
+                'pollutant': 'PM10,PM2.5,NOx,CO,SOx,NH3'
+            };
+            $('#multiselect-regions').multiselect();
+            updateDiv('sec-rep-ch-1', '/sectors_aq_1', filters);
+            updateDiv('sec-rep-ch-2', '/sectors_aq_2', filters);
+
+            filters['pollutant'] = 'PM10';
+            updateDiv('sec-rep-ch-pm10', '/emission_over_time', filters);
+            filters['pollutant'] = 'PM2.5';
+            updateDiv('sec-rep-ch-pm25', '/emission_over_time', filters);
+            filters['pollutant'] = 'NOx';
+            updateDiv('sec-rep-ch-nox', '/emission_over_time', filters);
+            filters['pollutant'] = 'CO';
+            updateDiv('sec-rep-ch-co', '/emission_over_time', filters);
+            filters['pollutant'] = 'SOx';
+            updateDiv('sec-rep-ch-sox', '/emission_over_time', filters);
+            filters['pollutant'] = 'NH3';
+            updateDiv('sec-rep-ch-nh3', '/emission_over_time', filters);
+        });
+
+        function updateDiv(divId, uri, filters) {
+            let divIdWithHash = '#' + divId;
+            var chart_div = document.querySelector(divIdWithHash);
+            var finalUri = addFiltersToUri(uri, filters);
+            console.log(finalUri);
+            chart_div.innerHTML = "<img style=\"height:300px;width:400px\" src={% static 'airpollution/assets/img/gif/pre-loader-2.gif' %}>";
+            fetch(finalUri)
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (item) {
+                    var chart_div = document.querySelector(divIdWithHash);
+                    chart_div.innerHTML = "";
+                    Bokeh.embed.embed_item(item, divId);
+                    chart_div.setAttribute('data-url', finalUri);
+                }).catch((error) => {
+                var chart_div = document.querySelector(divIdWithHash);
+                chart_div.innerHTML = "<img style=\"height:200px;width:auto\" src={% static 'airpollution/assets/img/tech-snag.png' %}>";
+                chart_div.setAttribute('data-url', finalUri);
+            });
+        }
+
+        function addFiltersToUri(uri, filters) {
+            var pollutant = filters['pollutant'];
+            var countries = filters['countries'];
+            var finalUri = uri;
+            var filterSuffixUri = '';
+
+            if (pollutant != null) {
+                filterSuffixUri = 'pollutant=' + pollutant;
+            }
+            if (countries) {
+                if (filterSuffixUri) {
+                    filterSuffixUri += '&';
+                }
+                filterSuffixUri = filterSuffixUri + 'countries=' + countries;
+            }
+            if (filterSuffixUri != '') {
+                finalUri = finalUri + '?' + filterSuffixUri;
+            }
+            return finalUri;
+        }
+
+        function update() {
+            var regionsDiv = document.querySelector('#multiselect-regions');
+            var regions = null;
+
+            if (regionsDiv.selectedOptions.length > 0) {
+                for(var i = 0; i < regionsDiv.selectedOptions.length; i++){
+                    var option = regionsDiv.selectedOptions[i];
+                    if (regions == null) {
+                        regions = option.value;
+                    } else {
+                        regions = regions + ',' + option.value
+                    }
+                }
+            }
+
+            var filters = {
+                'countries': regions,
+                'pollutant': 'PM10,PM2.5,O3,CO,SO2,NO2'
+            };
+            updateDiv('sec-rep-ch-1', '/sectors_aq_1', filters);
+            updateDiv('sec-rep-ch-2', '/sectors_aq_2', filters);
+
+            filters['pollutant'] = 'PM10';
+            updateDiv('sec-rep-ch-pm10', '/emission_over_time', filters);
+            filters['pollutant'] = 'PM2.5';
+            updateDiv('sec-rep-ch-pm25', '/emission_over_time', filters);
+            filters['pollutant'] = 'NOx';
+            updateDiv('sec-rep-ch-nox', '/emission_over_time', filters);
+            filters['pollutant'] = 'CO';
+            updateDiv('sec-rep-ch-co', '/emission_over_time', filters);
+            filters['pollutant'] = 'SOx';
+            updateDiv('sec-rep-ch-sox', '/emission_over_time', filters);
+            filters['pollutant'] = 'NH3';
+            updateDiv('sec-rep-ch-nh3', '/emission_over_time', filters);
+        }
+
+        function addChartToPersona(button) {
+            var csrftoken = jQuery("[name=csrfmiddlewaretoken]").val();
+            var chartid = button.dataset['chartid'];
+            var formid = button.dataset['formid'];
+            var form = document.querySelector('#' + formid);
+            var selectedOption = form.getElementsByTagName('select').persona;
+            let groupId = selectedOption.options[selectedOption.selectedIndex].value;
+            console.log(groupId);
+            console.log(chartid);
+            var element = document.querySelector('#' + chartid);
+            let url = element.dataset.url;
+            console.log(url);
+            const request = new XMLHttpRequest();
+            {#request.open('GET', '/add_chart_to_persona/' + groupId + '/' + chartid + '/regional');#}
+            request.open('POST', '/add_chart_to_persona/');
+            request.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+            request.setRequestHeader('Content-type', 'application/json');
+            request.setRequestHeader("X-CSRFToken", csrftoken);
+            var params = {};
+            params.chart_id = chartid;
+            params.group_id = groupId;
+            params.url = encodeURI(url);
+            params.label = element.dataset.label;
+            request.onload = () => {
+                console.log(request.responseText);
+                Notify("Chart Added to persona", null, null, 'success');
+            };
+            request.send(JSON.stringify(params));
+        }
+    </script>
+{% endblock %}
+{% block sectors-dashboard-navitem-active %}
+    active
+{% endblock %}
+{% block dashboardname %}Sectors Dashboard{% endblock %}
+{% block contentbody %}
+    <div class="content" style="margin-top: 30px;">
+        <div class="container-fluid">
+            <div class="row">
+                <div id="notifications"></div>
+            </div>
+            <div class="row card-header ">
+                <div class="col-md-4">
+                    <h4 class="card-title mt-0 font-weight-bold lead eu-nav-title">Emissions report by sectors</h4>
+                </div>
+                <div class="col-md-8">
+                    <div class="eu-treds-filter">
+
+                        <div class="eu-treds-filterspace">
+                            <h5 class="card-title mt-0">Filters</h5>
+                        </div>
+                        <div class="eu-treds-filterspace eu-inline">
+                            <h6>Regions</h6>
+                            <select id="multiselect-regions">
+                                <option value="EU28">Europe</option>
+                                <option value="AT">Austria</option>
+                                <option value="BE">Belgium</option>
+                                <option value="BG">Bulgaria</option>
+                                <option value="CY">Cyprus</option>
+                                <option value="CZ">Czech Republic</option>
+                                <option value="DE">Germany</option>
+                                <option value="DK">Denmark</option>
+                                <option value="EE">Estonia</option>
+                                <option value="ES">Spain</option>
+                                <option value="FI">Finland</option>
+                                <option value="FR">France</option>
+                                <option value="GR">Greece</option>
+                                <option value="HR">Croatia</option>
+                                <option value="HU">Hungary</option>
+                                <option value="IE">Ireland</option>
+                                <option value="IT">Italy</option>
+                                <option value="LT">Lithuania</option>
+                                <option value="LU">Luxembourg</option>
+                                <option value="LV">Latvia</option>
+                                <option value="MT">Malta</option>
+                                <option value="NL">Netherlands</option>
+                                <option value="PT">Portugal</option>
+                                <option value="RO">Romania</option>
+                                <option value="SE">Sweden</option>
+                                <option value="SI">Slovenia</option>
+                                <option value="SK">Slovakia</option>
+                                <option value="GB">United Kingdom</option>
+                            </select>
+                        </div>
+
+                        <div class="d-flex align-items-center eu-btn">
+                            <input id="submit-filter-button" class="btn btn-primary"
+                                   type="submit" value="Submit" onclick="update();"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 mt-4">
+                    <div class="card">
+                        <div class="card-header-success">
+                            <div class="col-sm-12">
+                                <h4 class="card-title mt-0 font-weight-normal">Yearly emissions of main pollutant</h4>
+                            </div>
+                        </div>
+                        <div id="sec-rep-ch-2" data-label="Yearly emissions of main pollutant">
+                        </div>
+                    </div>
+
+                    {% if user.is_superuser %}
+                        <div id="sec-rep-ch-1-form">
+                            <select class=" form-group btn btn-primary dropdown-toggle"
+                                    data-toggle="dropdown" aria-expanded="false" name="persona">
+                                {% for group in groups %}
+                                    <option class="dropdown-item"
+                                            value="{{ group.id }}">{{ group.name }}</option>
+                                {% endfor %}
+                            </select>
+                            <input id="add-chart-to-persona-button" class="btn btn-primary"
+                                   data-chartid="sec-rep-ch-1" data-formid="sec-rep-ch-1-form"
+                                   type="submit" value="Add" onclick="addChartToPersona(this)"/>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 mt-4">
+                    <div class="card">
+                        <div class="card-header-success">
+                            <div class="col-sm-12">
+                                <h4 class="card-title mt-0 font-weight-normal">Emissions percentage based on sectors in 2017</h4>
+                            </div>
+                        </div>
+                        <div id="sec-rep-ch-1" data-label="Emissions percentage based on sectors in 2017">
+                        </div>
+                    </div>
+
+                    {% if user.is_superuser %}
+                        <div id="sec-rep-ch-2-form">
+                            <select class=" form-group btn btn-primary dropdown-toggle"
+                                    data-toggle="dropdown" aria-expanded="false" name="persona">
+                                {% for group in groups %}
+                                    <option class="dropdown-item"
+                                            value="{{ group.id }}">{{ group.name }}</option>
+                                {% endfor %}
+                            </select>
+                            <input id="add-chart-to-persona-button" class="btn btn-primary"
+                                   data-chartid="sec-rep-ch-2" data-formid="sec-rep-ch-2-form"
+                                   type="submit" value="Add" onclick="addChartToPersona(this)"/>
+                        </div>
+                    {% endif %}
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-6 mt-4">
+                    <div class="card">
+                        <div class="card-header-success">
+                            <div class="col-sm-12">
+                                <h4 class="card-title mt-0 font-weight-normal">PM10</h4>
+                            </div>
+                        </div>
+                        <div id="sec-rep-ch-pm10" data-label="PM10 emission per sector">
+                        </div>
+                    </div>
+
+                    {% if user.is_superuser %}
+                        <div id="sec-rep-ch-pm10-form">
+                            <select class=" form-group btn btn-primary dropdown-toggle"
+                                    data-toggle="dropdown" aria-expanded="false" name="persona">
+                                {% for group in groups %}
+                                    <option class="dropdown-item"
+                                            value="{{ group.id }}">{{ group.name }}</option>
+                                {% endfor %}
+                            </select>
+                            <input id="add-chart-to-persona-button" class="btn btn-primary"
+                                   data-chartid="sec-rep-ch-pm10" data-formid="sec-rep-ch-pm10-form"
+                                   type="submit" value="Add" onclick="addChartToPersona(this)"/>
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="col-md-6 mt-4">
+                    <div class="card">
+                        <div class="card-header-success">
+                            <div class="col-sm-12">
+                                <h4 class="card-title mt-0 font-weight-normal">PM2.5</h4>
+                            </div>
+                        </div>
+                        <div id="sec-rep-ch-pm25" data-label="PM2.5 emission per sector">
+                        </div>
+                    </div>
+                    {% if user.is_superuser %}
+                        <div id="sec-rep-ch-pm25-form">
+                            <select class=" form-group btn btn-primary dropdown-toggle"
+                                    data-toggle="dropdown" aria-expanded="false" name="persona">
+                                {% for group in groups %}
+                                    <option class="dropdown-item"
+                                            value="{{ group.id }}">{{ group.name }}</option>
+                                {% endfor %}
+                            </select>
+                            <input id="add-chart-to-persona-button" class="btn btn-primary"
+                                   data-chartid="sec-rep-ch-pm25" data-formid="sec-rep-ch-pm25-form"
+                                   type="submit" value="Add" onclick="addChartToPersona(this)"/>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mt-4">
+                    <div class="card">
+                        <div class="card-header-success">
+                            <div class="col-sm-12">
+                                <h4 class="card-title mt-0 font-weight-normal">NOx</h4>
+                            </div>
+                        </div>
+                        <div id="sec-rep-ch-nox" data-label="NOx emission per sector">
+                        </div>
+                    </div>
+                    {% if user.is_superuser %}
+                        <div id="sec-rep-ch-nox-form">
+                            <select class=" form-group btn btn-primary dropdown-toggle"
+                                    data-toggle="dropdown" aria-expanded="false" name="persona">
+                                {% for group in groups %}
+                                    <option class="dropdown-item"
+                                            value="{{ group.id }}">{{ group.name }}</option>
+                                {% endfor %}
+                            </select>
+                            <input id="add-chart-to-persona-button" class="btn btn-primary"
+                                   data-chartid="sec-rep-ch-nox" data-formid="sec-rep-ch-nox-form"
+                                   type="submit" value="Add" onclick="addChartToPersona(this)"/>
+                        </div>
+                    {% endif %}
+                </div>
+
+                <div class="col-md-6 mt-4">
+                    <div class="card">
+                        <div class="card-header-success">
+                            <div class="col-sm-12">
+                                <h4 class="card-title mt-0 font-weight-normal">CO</h4>
+                            </div>
+                        </div>
+                        <div id="sec-rep-ch-co" data-label="CO emission per sector">
+                        </div>
+                    </div>
+                    {% if user.is_superuser %}
+                        <div id="sec-rep-ch-co-form">
+                            <select class=" form-group btn btn-primary dropdown-toggle"
+                                    data-toggle="dropdown" aria-expanded="false" name="persona">
+                                {% for group in groups %}
+                                    <option class="dropdown-item"
+                                            value="{{ group.id }}">{{ group.name }}</option>
+                                {% endfor %}
+                            </select>
+                            <input id="add-chart-to-persona-button" class="btn btn-primary"
+                                   data-chartid="sec-rep-ch-co" data-formid="sec-rep-ch-co-form"
+                                   type="submit" value="Add" onclick="addChartToPersona(this)"/>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mt-4">
+                    <div class="card">
+                        <div class="card-header-success">
+                            <div class="col-sm-12">
+                                <h4 class="card-title mt-0 font-weight-normal">SOx</h4>
+                            </div>
+                        </div>
+                        <div id="sec-rep-ch-sox" data-label="SOx emission per sector">
+                        </div>
+                    </div>
+                    {% if user.is_superuser %}
+                        <div id="sec-rep-ch-sox-form">
+                            <select class=" form-group btn btn-primary dropdown-toggle"
+                                    data-toggle="dropdown" aria-expanded="false" name="persona">
+                                {% for group in groups %}
+                                    <option class="dropdown-item"
+                                            value="{{ group.id }}">{{ group.name }}</option>
+                                {% endfor %}
+                            </select>
+                            <input id="add-chart-to-persona-button" class="btn btn-primary"
+                                   data-chartid="sec-rep-ch-sox" data-formid="sec-rep-ch-sox-form"
+                                   type="submit" value="Add" onclick="addChartToPersona(this)"/>
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="col-md-6 mt-4">
+                    <div class="card">
+                        <div class="card-header-success">
+                            <div class="col-sm-12">
+                                <h4 class="card-title mt-0 font-weight-normal">NH3</h4>
+                            </div>
+                        </div>
+                        <div id="sec-rep-ch-nh3" data-label="NH3 emission per sector">
+                        </div>
+                    </div>
+                    {% if user.is_superuser %}
+                        <div id="sec-rep-ch-nh3-form">
+                            <select class=" form-group btn btn-primary dropdown-toggle"
+                                    data-toggle="dropdown" aria-expanded="false" name="persona">
+                                {% for group in groups %}
+                                    <option class="dropdown-item"
+                                            value="{{ group.id }}">{{ group.name }}</option>
+                                {% endfor %}
+                            </select>
+                            <input id="add-chart-to-persona-button" class="btn btn-primary"
+                                   data-chartid="sec-rep-ch-nh3" data-formid="sec-rep-ch-nh3-form"
+                                   data-label="NH3 Emission by Sector"
+                                   type="submit" value="Add" onclick="addChartToPersona(this)"/>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

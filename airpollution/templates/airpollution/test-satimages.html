@@ -1,0 +1,17 @@
+{% extends "airpollution/layout/corejs_script_layout.html" %}
+{% block jscript %}{% endblock %}
+
+{% block default-dashboard-navitem-active %}
+    active
+{% endblock %}
+
+
+{% block dashboardname %}TEST FOR SAT IMAGES{% endblock %}
+{% block contentbody %}
+    <div class="content">
+<!--        <p>{{ params }}</p>-->
+<!--        <p>{{ params.shape.2 }} {{ params.shape.3 }}</p>-->
+        <img id="sat_image" src="data:image/png;base64,{{ img_base64 }}" height="{{ params.shape.2 }}" width="{{ params.shape.3 }}" alt="sat image">
+    </div>
+{% endblock %}
+

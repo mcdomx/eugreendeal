@@ -1,0 +1,70 @@
+airpollution.tests package
+==========================
+
+Submodules
+----------
+
+airpollution.tests.daily\_aq\_tests module
+------------------------------------------
+
+.. automodule:: airpollution.tests.daily_aq_tests
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+airpollution.tests.eeamodeltests module
+---------------------------------------
+
+.. automodule:: airpollution.tests.eeamodeltests
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+airpollution.tests.eurostatmodeltests module
+--------------------------------------------
+
+.. automodule:: airpollution.tests.eurostatmodeltests
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+airpollution.tests.nutsregions\_tests module
+--------------------------------------------
+
+.. automodule:: airpollution.tests.nutsregions_tests
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+airpollution.tests.observations\_tests module
+---------------------------------------------
+
+.. automodule:: airpollution.tests.observations_tests
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+airpollution.tests.pollutants\_tests module
+-------------------------------------------
+
+.. automodule:: airpollution.tests.pollutants_tests
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+airpollution.tests.tests module
+-------------------------------
+
+.. automodule:: airpollution.tests.tests
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: airpollution.tests
+   :members:
+   :undoc-members:
+   :show-inheritance:

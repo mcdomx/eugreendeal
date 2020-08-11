@@ -1,0 +1,15 @@
+
+{
+   "de": {
+       "2017": {
+           "co": {
+               "aviation" : 1.32,
+               "construction" : 0.48
+           },
+           "pm25": {
+               "aviation" : 0.44,
+               "construction" : 0.43
+           }
+       }
+   }
+}

@@ -1,0 +1,14 @@
+@media (min-width: 476px) {
+    .hide-on-big-screen {
+        display: none;
+    }
+}
+
+@media (max-width: 472px) {
+    #logout-button, #title-header {
+        width: 150px;
+    }
+    .hide-on-small-screen {
+        display: none;
+    }
+}

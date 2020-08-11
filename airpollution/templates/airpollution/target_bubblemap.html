@@ -1,0 +1,192 @@
+{% extends "airpollution/layout/corejs_script_layout.html" %}
+{% load static %}
+
+{% block jscript %}
+{% csrf_token %}
+    <script type="text/javascript">
+        var startDate = null;
+        var endDate = null;
+        var pollutants = null;
+        document.addEventListener('DOMContentLoaded', () => {
+            var prevMonthFirstDay = moment().subtract(1, 'months').date(1);
+            var prevMonthLastDay = moment().date(1).subtract(1, 'days');
+
+            startDate = prevMonthFirstDay.format('YYYY-MM-DD');
+            endDate = prevMonthLastDay.format('YYYY-MM-DD');
+
+            $(function () {
+                $('input[name="daterange"]').daterangepicker({
+                    opens: 'left',
+                    startDate: prevMonthFirstDay,
+                    endDate: prevMonthLastDay,
+                    locale: {
+                        format: 'YYYY-MM-DD'
+                    }
+                }, function (start, end, label) {
+                    console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+                    startDate = start.format('YYYY-MM-DD');
+                    endDate = end.format('YYYY-MM-DD')
+                });
+            });
+
+            var filters = {
+                'start_date': startDate,
+                'end_date': endDate,
+                'pollutants': pollutants
+            };
+
+            updateDiv('reg-rep-ch-1', '/map_target_bubbles', filters);
+
+        });
+
+        function updateDiv(divId, uri, filters) {
+            let divIdWithHash = '#' + divId;
+            var chart_div = document.querySelector(divIdWithHash);
+            var finalUri = addFiltersToUri(uri, filters);
+
+            console.log(uri)
+
+            console.log(finalUri);
+            chart_div.innerHTML = "<img style=\"height:300px;width:400px\" src={% static 'airpollution/assets/img/gif/pre-loader-2.gif' %}>";
+            fetch(finalUri)
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (item) {
+                    var chart_div = document.querySelector(divIdWithHash);
+                    chart_div.innerHTML = "";
+                    Bokeh.embed.embed_item(item, divId);
+                    chart_div.setAttribute('data-url', finalUri);
+                }).catch((error) => {
+                var chart_div = document.querySelector(divIdWithHash);
+                chart_div.innerHTML = "<img style=\"height:200px;width:400px\" src={% static 'airpollution/assets/img/tech-snag.png' %}>";
+                chart_div.setAttribute('data-url', finalUri);
+            });
+        }
+
+        function addFiltersToUri(uri, filters) {
+            console.log("Adding filters...")
+            console.log(filters)
+
+            var pollutants = filters['pollutants'];
+            var startDate = filters['start_date'];
+            var endDate = filters['end_date'];
+            var finalUri = uri;
+            var filterSuffixUri;
+            if (startDate) {
+                filterSuffixUri = 'start_date=' + startDate;
+            }
+            if (endDate) {
+                if (filterSuffixUri) {
+                    filterSuffixUri += '&';
+                }
+                filterSuffixUri = filterSuffixUri + 'end_date=' + endDate;
+            }
+            if (filterSuffixUri) {
+                finalUri = finalUri + '?' + filterSuffixUri;
+            }
+
+            return finalUri;
+        }
+
+        function update() {
+            var filters = {
+                'start_date': startDate,
+                'end_date': endDate,
+                'pollutants': pollutants
+            };
+            updateDiv('reg-rep-ch-1', '/map_target_bubbles', filters);
+        }
+
+        function addChartToPersona(button) {
+            var csrftoken = jQuery("[name=csrfmiddlewaretoken]").val();
+            var chartid = button.dataset['chartid'];
+            var formid = button.dataset['formid'];
+            var form = document.querySelector('#' + formid);
+            var selectedOption = form.getElementsByTagName('select').persona;
+            let groupId = selectedOption.options[selectedOption.selectedIndex].value;
+            console.log(groupId);
+            console.log(chartid);
+            let url = document.querySelector('#' + chartid).dataset.url;
+            console.log(url);
+            const request = new XMLHttpRequest();
+            {#request.open('GET', '/add_chart_to_persona/' + groupId + '/' + chartid + '/regional');#}
+            request.open('POST', '/add_chart_to_persona/');
+            request.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+            request.setRequestHeader('Content-type', 'application/json');
+            request.setRequestHeader("X-CSRFToken", csrftoken);
+            var params = {};
+            params.chart_id = chartid;
+            params.group_id = groupId;
+            params.url = encodeURI(url);
+            request.onload = () => {
+                {#var data = JSON.parse(request.responseText);#}
+                console.log(request.responseText);
+            };
+            request.send(JSON.stringify(params));
+        }
+
+    </script>
+{% endblock %}
+
+{% block default-dashboard-navitem-active %}
+    active
+{% endblock %}
+
+
+{% block dashboardname %} Target Achievement by Population {% endblock %}
+{% block contentbody %}
+
+<div class="content" style="margin-top: 30px;">
+    <div class="container-fluid">
+        <div class="row"></div>
+        <div class="row">
+            <div class="col-md-2">
+                <h4 class="card-title mt-0">Target Achievements and Population Effected</h4>
+            </div>
+            <div class="col-md-10">
+                <div class="row">
+                    <!--<div class="col-sm-12">-->
+                    <div class="col">
+                        <h5 class="card-title mt-0">Filters</h5>
+                    </div>
+
+                    <div class="col=md-4">
+                        <h6>Date Range</h6>
+                        <input class="form-control" type="text" name="daterange"/>
+                    </div>
+                    <div class="cold-md-1">
+                        <input id="submit-filter-button" class="btn btn-primary"
+                               type="submit" value="Submit" onclick="update('nl');"/>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div id="reg-rep-ch-1">
+
+
+                </div>
+                {% if user.is_superuser %}
+                    <div id="reg-rep-ch-1-form">
+                        <select class=" form-group btn btn-primary dropdown-toggle"
+                                data-toggle="dropdown" aria-expanded="false" name="persona">
+                            {% for group in groups %}
+                                <option class="dropdown-item"
+                                        value="{{ group.id }}">{{ group.name }}</option>
+                            {% endfor %}
+                        </select>
+                        <input id="add-chart-to-persona-button" class="btn btn-primary"
+                               data-chartid="reg-rep-ch-1" data-formid="reg-rep-ch-1-form"
+                               type="submit" value="Add" onclick="addChartToPersona(this)"/>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
