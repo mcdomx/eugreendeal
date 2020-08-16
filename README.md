@@ -7,7 +7,9 @@ The following slides are from the final project presentation of this project to 
 
 This was a complex project built collaboratively with a team of 6 fellow graduate students.  The requirements for the project were developed in coordination with Data Science staff at the European Commission.
 
-[Link to Final Technical Paper](EU_Green_Deal_Paper_Final.pdf)
+[Link to Technical Paper (pdf)](EU_Green_Deal_Paper_Final.pdf)
+
+[Link to Application Setup Guide (pdf)](READEME_APPLICATION_GUIDE.pdf)
 
 ![final presentation p1](EU_Green_Deal_Final_Presentation_1.jpeg)
 ![final presentation p2](EU_Green_Deal_Final_Presentation_2.jpeg)
